@@ -1,0 +1,13 @@
+{
+  "table_entries": 11214,
+  "editorial_strings": 924,
+  "array_items": 3,
+  "all_original_resource_ids_preserved": true,
+  "all_old_pool_strings_and_indices_preserved": true,
+  "existing_localized_resources_preserved": true,
+  "format_placeholders_preserved": true,
+  "manifest_unchanged": true,
+  "independent_jadx_decode_passed": true,
+  "default_resource_cjk_remaining": [],
+  "hardware_tested": false
+}

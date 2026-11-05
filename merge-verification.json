@@ -1,0 +1,11 @@
+{
+  "source_is_synthetic_fixture": true,
+  "full_real_apk_available": false,
+  "source_unchanged": true,
+  "all_replacements_verified": true,
+  "unrelated_assets_native_data_and_notices_preserved": true,
+  "stale_v1_signatures_removed": true,
+  "wrong_version_rejected": true,
+  "existing_output_refused": true,
+  "install_tested": false
+}

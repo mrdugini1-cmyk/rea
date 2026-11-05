@@ -1,0 +1,691 @@
+ab_update_later_bt	Позже
+ab_update_retry_bt	Повторить
+about_machine_text	Об устройстве
+access_number	Номер сетевого доступа
+adaptation_mutex_toast	Отключите адаптацию %1$s и повторите попытку
+adaptive_env_tips	Автоматическая регулировка яркости и цветопередачи в зависимости от освещения
+adaptive_settings_tips	Выберите диапазон автоматической регулировки яркости
+agreement_history_version_text	Предыдущие версии
+ai_image_mode_mutex_basic_setting	Основные настройки недоступны в режиме AI
+ai_image_mode_mutex_prof_setting	Профессиональные настройки недоступны в режиме AI
+ai_location_when_power_on	Автопозиционирование изображения при включении
+ak_3d_mode_content	В режиме 3D коррекция трапеции для боковой проекции отключается. Автокоррекция также недоступна
+ak_3d_mode_title	Перед включением 3D установите проектор прямо перед экраном
+al_name_str_ambient	Окружение
+al_name_str_ambient_light	Окружающее освещение
+ambient_lighting	Фоновые колонки
+ambient_lighting_settings	Настройки фоновых колонок
+android_version_text	Версия Android
+auto_beta_taste_text	Закрытое бета-тестирование
+auto_beta_text	Публичное бета-тестирование
+auto_calibration	Калибровка автокоррекции трапеции
+auto_calibration_xiao_bai	Калибровка автокоррекции
+auto_focus	Автофокус
+auto_key_stone_calibration	Калибровка коррекции трапеции
+auto_key_stone_calibration_layout_left_txt	Установите проектор горизонтально, прямо перед стеной
+auto_key_stone_calibration_layout_right_txt	Установите проектор на ровную поверхность в 1,8–2,1 м от стены или экрана
+auto_key_stone_calibration_layout_txt	Чем точнее калибровка, тем лучше результат коррекции
+auto_key_stone_calibration_title	Если после автокоррекции изображение не прямоугольное, выполните калибровку коррекции трапеции
+auto_keystone	Автокоррекция трапеции
+auto_keystone_calibration_klxq_tips	Используйте, только если после автокоррекции изображение не прямоугольное
+auto_keystone_shift_curtain_text	Коррекция выравнивания по экрану
+auto_keystone_text	Автокоррекция трапеции
+auto_keystone_text_ak3	Автокоррекция одним нажатием
+auto_vertical_turn	Автопереворот изображения
+auto_vertical_turn_msg	Включён автоматический переворот изображения. Его можно отключить в настройках
+auto_vertical_turn_tip	Автоматически выбирает настольную или потолочную проекцию в зависимости от положения устройства
+autofocus_heat	Динамический автофокус
+autofocus_heat_title	Автоматически восстанавливает чёткость, если изображение теряет фокус
+automatic_keystone_correction	Автокоррекция трапеции
+auxiliary_curtain_alignment	Выравнивание по экрану
+auxiliary_curtain_alignment_tips	Автоматически подгоняет изображение под границы проекционного экрана
+back_txt	Назад
+basic_auto_switch_tips	Автоматически выбирает подходящий режим изображения при распознавании формата источника, например HDR Vivid
+blu_pair_text	Сопряжение
+bluetooth_audio_sharing	Совместное прослушивание
+bluetooth_audio_sharing_toast	Совместное прослушивание доступно, только если для вывода звука выбрано «Авто»
+bluetooth_clear_pair_dialog_desc	Данные сопряжения с устройством будут удалены
+bluetooth_clear_pair_dialog_title	Удалить сопряжение?
+bluetooth_confirm_passkey_msg	Убедитесь, что на устройстве «%1$s» показан этот код сопряжения
+bluetooth_dialog_cancel_paired	Удалить сопряжение
+bluetooth_dialog_clear	Удалить
+bluetooth_dialog_clear_detail	Пульт перестанет управлять проектором. Для повторного сопряжения удерживайте кнопки, указанные ниже
+bluetooth_dialog_clear_iot	Удалить сопряжение с беспроводным HDMI-передатчиком?
+bluetooth_dialog_clear_iot_detail	Повторно подключить умный экран XGIMI можно в разделе «Настройки → Bluetooth»
+bluetooth_dialog_clear_iot_screen_detail	Для повторного сопряжения удерживайте кнопку беспроводной трансляции
+bluetooth_dialog_clear_iot_switchpane_detail	После удаления потребуется повторное сопряжение
+bluetooth_dialog_clear_k_sound_detail	Повторно подключить портативную колонку XGIMI можно в разделе «Настройки → Bluetooth»
+bluetooth_dialog_clear_remote	Удалить сопряжение с пультом XGIMI?
+bluetooth_dialog_clear_remote_brand	Удалить сопряжение с пультом?
+bluetooth_dialog_clear_switch_pane	Удалить сопряжение с панелью управления?
+bluetooth_dialog_connect	Подключить
+bluetooth_disconnect_desc	Данные сопряжения с устройством будут удалены
+bluetooth_hdmi_screen_adapter	Беспроводной HDMI-передатчик
+bluetooth_hdmi_screen_adapter_text	Беспроводной HDMI-передатчик
+bluetooth_iot_Adjust_the_screen_height	Регулировка высоты экрана
+bluetooth_iot_clear_pair_text	Удалить сопряжение
+bluetooth_iot_screen_animation	Анимация опускания экрана
+bluetooth_iot_screen_animation_tips	Показывать анимацию при опускании экрана во время включения
+bluetooth_iot_title_text	Умный экран XGIMI
+bluetooth_k_sound_battery_level_text	Заряд аккумулятора
+bluetooth_k_sound_clear_pair_text	Удалить сопряжение
+bluetooth_my_device_title	Мои устройства
+bluetooth_other_title	Другие устройства
+bluetooth_rc_clear_pair_text	Удалить сопряжение
+bluetooth_rc_custom_key_text	Быстрый доступ
+bluetooth_rc_custom_key_tips	Назначьте функции кнопкам быстрого доступа
+bluetooth_rc_power_text	Заряд аккумулятора
+bluetooth_rc_title_text	Пульт XGIMI
+bluetooth_remote_device_title	Пульты
+bluetooth_scan_device	Добавить устройство
+bluetooth_switch_panel_text	Панель управления
+boost_close_confirm	Выключить изображение и выйти
+boost_close_desc	После выхода яркость снизится, а цветопередача улучшится. Во время переключения изображение ненадолго погаснет и затем включится автоматически
+boost_close_title	Выйти из Boost для улучшения цветопередачи?
+boost_confirm	Выключить изображение и переключить
+boost_desc	Во время переключения изображение ненадолго погаснет, затем включится автоматически
+boost_mode_dont_support_color_space	В режиме Boost настройка цветового пространства недоступна
+boost_mode_mutex	Выйдите из режима Boost и повторите попытку
+boost_not_supported_under_3d	Переключение Boost недоступно в режиме 3D
+boost_title	Включить Boost для повышения яркости?
+boot_auto_focus_title	Автоматически настраивает фокус при каждом включении
+boot_auto_key_stone	Автокоррекция трапеции при включении
+boot_auto_key_stone_title	Автоматически корректирует изображение при каждом включении
+boot_auto_key_stone_xiaobai	Автонастройка изображения при включении
+boot_source_app	Выбранное приложение
+bracket_mode_switch	Режим подставки
+brightness_auto_brightness	Автоматическая яркость
+brightness_more_text	Ещё
+btn_change	Переключить
+btn_confirm	Подтвердить
+btn_continue	Продолжить
+btn_switch	Переключить
+built_in_text	Встроенная память
+calibration_anim_sub_title	Установите проектор прямо перед экраном и отрегулируйте угол, чтобы изображение стало прямоугольным
+calibration_choice_title	Как выглядит изображение сейчас?
+calibration_dialog_end_bt	Завершить калибровку
+calibration_dialog_go_tof	Отрегулировать
+calibration_dialog_reset_decs	Настройки автокоррекции трапеции будут сброшены
+calibration_dialog_reset_desc	Калибровка фокусировки будет сброшена к заводским значениям
+calibration_dialog_reset_xiaobai_decs	Настройки автокоррекции изображения будут сброшены
+calibration_gyroscope_dialog_decs	Если изображение прямоугольное, завершите калибровку. В противном случае продолжите
+calibration_keystone_dialog_decs	Если изображение прямоугольное, завершите калибровку. В противном случае продолжите
+calibration_keystone_dialog_txt	Иначе результат калибровки может быть неточным
+calibration_keystone_dialog_txt_title	Проверьте текущее изображение
+calibration_keystone_title	Калибровка коррекции трапеции
+calibration_keystone_txt	Добейтесь прямоугольной формы изображения
+calibration_layout_right_txt_short_focus	Установите проектор на ровную поверхность в 15–30 см от стены или экрана
+calibration_next_dialog_ok	OK
+calibration_next_dialog_sub_no_tof_title	Убедитесь, что расстояние до экрана — 1,8–2,1 м. Иначе калибровка может быть неточной
+calibration_next_dialog_sub_title	Если расстояние до экрана составляет 1,8–2,1 м, возможна неисправность датчика расстояния. Обратитесь в службу поддержки
+calibration_next_dialog_sub_title_short_focus	Если расстояние до экрана составляет 15–30 см, возможна неисправность датчика расстояния. Обратитесь в службу поддержки
+calibration_next_dialog_title_0	Проектор слишком близко к экрану. Увеличьте расстояние и повторите попытку
+calibration_next_dialog_title_1	Проектор слишком далеко от экрана. Уменьшите расстояние и повторите попытку
+calibration_next_no_tof_dialog_ok	Подтвердить
+calibration_start_txt	Следуйте указаниям справа, чтобы восстановить правильную форму изображения
+calibration_sure_dialog_desc	Неправильная форма изображения повлияет на точность калибровки
+calibration_sure_dialog_rearrange	Отрегулировать
+calibration_sure_dialog_sure	Подтвердить
+calibration_sure_dialog_title	Изображение прямоугольное?
+call_customer_deal	Обратитесь в службу поддержки
+camera_correct_tip3	Сделайте снимок и загрузите его с телефона, чтобы завершить выравнивание по экрану
+camera_correct_title	Выравнивание по экрану
+car_mode_dialog_open	Включить сейчас
+clear_pair_remove	Удалить
+clear_pair_title	Удалить сопряжение?
+close_fd_boost_retry	Отключите исходную частоту кадров и повторите попытку
+close_smart_space_retry	Отключите функцию «Умная стена» и повторите попытку
+color_accuracy_correction_complete	Точная цветопередача
+color_accuracy_correction_reset	Восстановлена цветопередача до включения коррекции
+color_enhanced	Улучшение цвета
+color_enhanced_tips	Выберите интенсивность улучшения цвета
+color_mode_text	Цветовой стиль
+color_mode_tips	Выберите или настройте цветовой стиль по своему вкусу
+color_range_setting	Диапазон RGB
+color_range_setting_auto_tops	Согласовывает диапазон RGB проектора и источника сигнала
+color_range_setting_full	Полный
+color_range_setting_limited	Ограниченный
+color_range_setting_message	Меняйте этот параметр, только если источник HDMI неверно передаёт сведения о диапазоне RGB
+color_range_setting_message_page3	Выберите диапазон RGB, соответствующий источнику сигнала
+color_space_bt2020_tips	Для Dolby Vision, IMAX Enhanced, HDR и другого контента с расширенным цветовым охватом
+color_space_dci_p3_state	Кинематографический цветовой охват
+color_space_dci_p3_tips	Цветовой охват DCI-P3 для насыщенных цветов при просмотре видео
+color_space_enhance_tips	Выберите интенсивность яркости и цвета по своему вкусу
+color_space_original_tips	Полный цветовой охват устройства для HDR, Dolby Vision и другого контента с широким охватом
+color_style_mutex_tips	Активен цветовой стиль режима RGB-лазера
+color_temp_cool	Холодная
+common_dialog_wifi_manual_pass	Введите пароль
+common_dialog_wifi_manual_safe	Безопасность
+common_dialog_wifi_manual_ssid	Введите SSID
+confirm_auto_keystone	Убедитесь, что автокоррекция трапеции откалибрована
+convenient_menu_view_txt	Сброс изображения / точная коррекция
+correcting_setting_xiao_bai	Настройки автокоррекции изображения
+current_input_source_name	Текущий источник
+current_mode_cannot_fan	В текущем режиме скорость вентилятора не регулируется
+curtain_projection_self_adapt_txt_xiaobai	Автоматически выравнивает изображение по границам экрана. Перед настройкой изображение должно выходить за все четыре края экрана
+custom_equipment_device_my	Мой проектор
+custom_equipment_name_state_text	Имя устройства
+custom_equipment_name_text	Своё название
+data_parental_settings_text	Родительский контроль
+data_restore_keep_apps	Сохранить приложения
+data_restore_keep_text	Сохранить установленные приложения
+data_restore_sure	Подтвердить
+device_used_time	Время работы проектора
+diagnosis_des_text	Удалённая диагностика устройства
+dialog_desc_smart_to_prof_mode	В экспертном режиме доступен оптический сдвиг объектива, но недоступны автокоррекция, автофокус, адаптация к цвету стены и умная защита глаз
+dialog_desc_smart_to_prof_mode_wall	Для правильной цветопередачи данные адаптации к цвету стены будут удалены
+dialog_gyroscope_calibration_title	Перед калибровкой гироскопа установите проектор на горизонтальную поверхность
+dialog_img_mode_warning_confirm	Переключить
+dialog_rgb_laser_confirm	Выключить изображение и переключить
+dialog_rgb_laser_desc	Во время переключения изображение ненадолго погаснет, затем включится автоматически
+dialog_show_warning_confirm	Переключить
+dialog_switch_second	Перед переключением установите проектор прямо перед экраном, иначе изображение будет искажено
+dialog_title_prof_mode_desc	Оптическое масштабирование и сдвиг объектива позволяют точно настроить изображение без потери качества. Рекомендуется при использовании проекционного экрана
+dialog_title_prof_mode_desc2	* В экспертном режиме недоступны автокоррекция, автофокус, адаптация к цвету стены и умная защита глаз
+dialog_title_switch_to_hoist	Переключить на потолочную установку?
+dialog_update_btn_confirm	Обновить
+dialog_update_btn_update	Возобновить
+dialog_wakeup_full_btn	Понятно
+dialog_wakeup_full_title	Достигнут лимит устройств. Сначала удалите одно из них
+digital_zoom_txt	Цифровой масштаб
+dress	Настольная установка
+dress_cast	Настольная прямая проекция
+forward_project	Настольная обратная проекция
+eco_mode_close_confirm	Выключить энергосбережение
+eco_mode_open_confirm	Включить энергосбережение
+eco_mode_tips	Снижает яркость и характеристики звука для экономии заряда. Рекомендуется при питании от аккумуляторной подставки XGIMI или пауэрбанка
+eco_mode_close_title_desc	При питании от аккумуляторной подставки XGIMI или пауэрбанка отключение энергосбережения может увеличить расход заряда или привести к выключению устройства
+elderly_mode_auto_open	Автоматически включён режим для пожилых
+electrify_boot_text	Включение при подаче питания
+enter_screen_saver_text	Запустить заставку
+env_adapt_title	Адаптация к освещению
+env_self_adapt_title	Адаптация к освещению
+environment_monitoring_text	Анализ условий проекции
+environment_monitoring_tip	Определяет условия проекции и выбирает подходящий способ коррекции
+eye_project_be_at_ease	Защитный режим
+eye_project_be_at_ease_tips	При обнаружении человека изображение отключается или перекрывается. Оно восстановится, когда человек отойдёт или будет нажата кнопка «Назад»
+eye_project_confirm_close_toast	Умная защита глаз отключена
+eye_project_follow	Защита с отслеживанием
+eye_project_follow_tips	Снижает яркость в области, где находится человек, следуя за его движением
+eye_project_tips	При обнаружении человека перед объективом снижает яркость, чтобы уменьшить воздействие света на глаза
+fan_level_manual	Вручную
+fan_stand_mode_auto_toast	Скорость вентилятора установлена на «Авто»
+filter_delete_dialog_desc	При удалении загруженного фильтра также удалится его копия в облаке
+filter_delete_dialog_title	Восстановить удалённый фильтр нельзя. Продолжить?
+filter_setting	Настроить
+filter_user_agreement	Пользовательское соглашение о фильтрах
+flat_wall_adapt_text	Адаптация к неровностям стены
+flatwall_guide_title	Адаптация к неровностям стены
+focus_correction	Калибровка фокусировки
+focus_max	Достигнут предел фокусировки
+focus_tab_text	Фокусировка
+focus_guide_desc_old	Переведите нижний переключатель в положение «Фокус» для автофокуса или используйте кнопки громкости +/− для ручной настройки
+focus_image_title	Настройте фокус по тестовому изображению, чтобы весь экран был чётким
+focus_calibration_sub_title	Если после автофокуса изображение остаётся размытым, выполните калибровку фокусировки
+game_enhance_mode	Улучшение игры
+game_enhance_mode_menu_tips	Если улучшение игры включено или установлено на «Авто», удерживайте кнопку настроек при просмотре внешнего источника, чтобы открыть игровые инструменты
+game_enhance_mode_switch_game_content_tips	Если устройство не поддерживает ALLM, выберите распознавание игрового устройства или включите режим вручную
+game_enhance_mode_switch_title	Условие автоматического переключения
+game_enhance_mode_tips	В режиме «Авто» улучшение игры включается при распознавании игрового контента или устройства на входе HDMI
+game_mode_default_basic_txt	Снижает задержку с сохранением разрешения изображения
+game_mode_level_basic_text	Базовый
+game_mode_level_topspeed_text	Минимальная задержка
+game_mode_low_latency_txt	Минимальная задержка; коррекция изображения недоступна
+game_mode_no_hdmi_tip	Настраивайте при просмотре внешнего источника
+game_mode_select_close_text	Выкл.
+game_mode_select_open_text	Вкл.
+game_mode_state_tips	Выберите базовый режим или минимальную задержку
+game_mode_switch_keystone_tip	«Коррекция трапеции» и «Адаптация к неровностям стены»
+general_set_device_auto_startup	Включение проектора по HDMI
+general_set_device_control_cec_text	Управление HDMI CEC
+general_set_device_control_cec_tip	Управление подключёнными устройствами по HDMI. При отключении этой функции вывод звука через ARC недоступен
+general_set_focus	Тест фокусировки
+gm_version_text	Версия INUI
+gmui_version_text	Версия GMUI
+gyroscope_calibration_reset_sub_title	Если результат калибровки неудовлетворительный, восстановите заводские значения
+gyroscope_calibration_sub_title	Установите проектор на ровную поверхность прямо перед экраном. Изображение должно быть прямоугольным, а нижний край — параллелен полу
+hall_calibration_angle_suitable	Угол проекции подходит
+hall_calibration_distance_suitable	Расстояние подходит
+hall_calibration_distance_too_near	Проектор слишком близко к экрану
+hall_calibration_error_toast	Перед повторной попыткой убедитесь, что проектор неподвижен
+hall_calibration_finish_hint	Переместите проектор или направьте его на другую стену, чтобы проверить фокусировку после калибровки
+hall_calibration_focus_handing	Не перемещайте проектор во время калибровки
+hall_calibration_hint	Если после автофокуса изображение остаётся размытым, выполните калибровку фокусировки
+hdmi_apply	Применить
+hdmi_display_width	Ширина изображения
+hdmi_display_height	Высота изображения
+hdmi_title	Настройки объединения изображений
+hdr_vivid_mutex_tips	Активен режим HDR Vivid
+head_general_setting_text	Общие настройки
+head_image_set_mode_text	Режим изображения
+head_image_setting_text	Яркость и изображение
+head_lighting_setting_text	Освещение
+hide_fan_level_text	Уровень скорости вентилятора
+hide_fan_text	Скорость вентилятора
+hide_input_text	Способ ввода
+hide_logcat_text	Отправка журналов
+hide_setting_text	Скрытые настройки
+hide_smart_curtain_text	Умный экран
+hide_time_day_text	День
+hide_time_hour_text	Час
+hide_time_min_text	Минута
+hide_time_month_text	Месяц
+hoist	Потолочная установка
+hoist_cast	Потолочная прямая проекция
+hotspot	Точка доступа:
+image_clarity_text	Чёткость
+image_mode_custom_hdr_mapping	Динамическое тональное отображение HDR
+image_mode_high_fps_base	Базовый режим
+image_mode_high_fps_top_speed	Минимальная задержка
+image_mode_isf_light_text	ISF День
+image_mode_isf_night_text	ISF Ночь
+image_mode_mutex_dolby	Активен режим Dolby Vision
+image_mode_mutex_game_run	Активен игровой режим
+image_mode_set_dynamic_state_tips	Усиливает яркие участки и детализацию теней в тёмных сценах
+image_original_needle_display	Исходная частота кадров
+image_original_needle_display_tips	Уменьшает рывки, вызванные неравномерным повторением кадров при воспроизведении видео
+image_set_3d_lrTo2d_text	Горизонтальная стереопара → 2D
+image_set_3d_lr_text	Горизонтальная стереопара
+image_set_3d_set_blue3d	Blu-ray 3D
+image_set_3d_tbTo2d_text	Вертикальная стереопара → 2D
+image_set_3d_tb_text	Вертикальная стереопара
+image_set_image_mode_prefect_120_tip	Повышает плавность движения, но снижает разрешение. Для минимальной задержки используйте игровой режим с высокой частотой кадров
+image_set_mode_ai_text	AI-изображение
+image_set_mode_color_correction_cyan	Голубой
+image_set_mode_color_correction_hue	Цветовой тон
+image_set_mode_color_correction_skin	Оттенки кожи
+image_set_mode_color_temp_blue_bias	Смещение синего
+image_set_mode_color_temp_blue_gain	Усиление синего
+image_set_mode_color_temp_green_bias	Смещение зелёного
+image_set_mode_color_temp_green_gain	Усиление зелёного
+image_set_mode_color_temp_red_bias	Смещение красного
+image_set_mode_color_temp_red_gain	Усиление красного
+image_set_mode_color_temp_cool_text	Холодная
+image_set_mode_color_temp_warm_text	Тёплая
+image_set_mode_color_temp_standard_text	Стандартная
+image_set_mode_custom_text	Пользовательский
+image_set_mode_game_basic_text	Базовый
+image_set_mode_game_low_latency_text	Минимальная задержка
+image_set_mode_gamma_index	Значение гаммы
+image_set_mode_gorgeous_text	Насыщенный
+image_set_mode_more_fold_text	Ещё
+image_set_mode_movies_text	Кино
+image_set_mode_off_text	Выкл.
+image_set_mode_prefect_120_text	120 Гц
+image_set_mode_teleplay_page4_text	Телепередачи
+image_set_mode_teleplay_text	Телепередачи
+image_set_mode_user_text	Пользовательский
+image_set_real_color_mode	Точная цветопередача
+image_style	Стиль изображения
+imax_enhanced_mutex_tips	Активен режим IMAX Enhanced
+import_setting_done	Настройки импортированы
+import_setting_title	Найден файл настроек. Импортировать?
+importing_error_retry	Ошибка импорта. Повторите попытку
+importing_setting_title	Импорт настроек…
+keyboard_switch_nine	Клавиатура T9
+keystone_automatic_wall_not_support	Недоступно при потолочной установке
+keystone_automatic_wall_positioning_tips	Поворотная подставка сканирует стену и выбирает подходящее положение изображения
+keystone_correction	Калибровка фокусировки
+keystone_reset_toast	Положение изображения сброшено
+language_text	Язык
+language_offline_desc	В этой версии английский язык больше не поддерживается. Система переключена на китайский
+language_offline_title	Изменение поддержки языков
+language_relaunch_app	Перезапустить приложение
+law_info_third_share	Данные, передаваемые третьим лицам
+law_info_user_collect	Собираемые персональные данные
+led_cool_tone_mode	Холодный
+led_custom_mode	Пользовательский
+lens_lock	Блокировка объектива
+lens_memory_update	Обновить профиль объектива
+level_top_btn_confirm	Калибровать
+leveltop	Калибровка уровня
+leveltop_title	Если после автокоррекции изображение наклонено, выполните горизонтальную калибровку гироскопа
+light_group_mode_all	Все источники
+lighting_mode	Режим освещения
+lighting_mode_bioclock	Освещение по времени суток
+lighting_mode_custom	Пользовательский
+lighting_mode_read	Чтение
+lighting_mode_relax	Отдых
+lighting_mode_viewing	Просмотр кино
+lighting_switch_off	Выключить свет
+lighting_switch_on	Включить свет
+manual_focus	Ручная фокусировка
+manual_keystone_tips	Угол проекции слишком велик. Установите проектор прямо перед экраном и повторите попытку
+master_color_correction_desc	Разработано совместно с немецкой CONNECT TESTLAB: точная настройка изображения обеспечивает естественную цветопередачу и детализацию
+master_color_correction_title_tips	Точная цветопередача, разработанная совместно с немецкой CONNECT TESTLAB
+menu_rotation	Поворот меню
+menu_rotation_right	90° вправо
+microphoen_dialog_bt	Понятно
+middle	Средний
+min_wifi_pass_msg_tip2	Введите не менее 5 символов
+miskey_string_default_music	Музыка по Bluetooth
+miskey_string_default_singer	Не воспроизводится
+miskey_string_unknown_music	Неизвестная композиция
+miskey_string_unknown_singer	Неизвестный исполнитель
+more_bluetooth_car_mode_tips	Позволяет подключить проектор к автомобильной системе по Bluetooth
+more_elderly_color_enhancement_text	Оптимизация цветов для пожилых
+more_elderly_color_enhancement_tip	Настраивает цветопередачу с учётом особенностей зрения пожилых людей
+more_export_batch_settings_tips	Экспорт настроек на USB-накопитель, кроме Wi-Fi и идентификатора проектора
+more_point_keystone_select	Размер сетки
+more_point_mutex_dialog_title	Изменение сетки сбросит коррекцию изображения. Продолжить?
+more_projector_data_sync	Синхронизация проекторов
+more_projector_data_sync_device_mode	Роль устройства
+more_projector_data_sync_device_mode_switch	Включить синхронизацию
+more_projector_data_sync_device_mode_tip	Передаёт настройки яркости и другие параметры с ведущего проектора на ведомый
+more_projector_data_sync_light_switch_tip	Поддерживает одинаковую яркость синхронизированных проекторов
+more_projector_data_sync_main_control	Ведущий
+more_projector_data_sync_main_control_slave	Ведомый
+more_projector_data_sync_picture_switch_tip	При включении синхронизирует параметры изображения с ведущим проектором
+more_projector_data_sync_setting_sync_tip	Передаёт остальные настройки на ведомый проектор, кроме изображения, яркости, сети, идентификатора и имени устройства
+more_projector_data_sync_setting_title	Синхронизируемые настройки
+more_projector_id_set	Идентификатор проектора
+more_str_boot	Загрузка
+more_vision_optimization_tip	Помогает различать цвета людям с нарушением цветового зрения
+movie_viewing_light_linkage	Освещение при просмотре кино
+music_control_disconnect_bt	Удалить сопряжение
+music_control_the_screen	Трансляция одним касанием
+music_control_the_screen_txt	Подключите телефон и проектор к одной сети и коснитесь телефоном музыкального контроллера для трансляции экрана. Поддерживаются телефоны Huawei с NFC и EMUI 11 или новее
+music_control_the_sound_txt	Коснитесь музыкального контроллера телефоном, чтобы передать воспроизведение музыки на проектор. Поддерживаются телефоны Android с NFC
+mutex_dynamic_black_bit_enhancement	Динамическое улучшение чёрного станет недоступно
+mutex_turbo_light_dialog_bt	Выключить Turbo Light
+mutex_turbo_light_dialog_title	Выключите Turbo Light и повторите попытку
+my_app_switch	Приложение
+native_display_not_hz120	Исходная частота кадров недоступна в режиме 120 Гц
+native_display_not_support_3d	3D недоступно при исходной частоте кадров
+nerwork_ip_inputerror	Ошибка ввода: %s
+nerwork_wifi_edit_title	Введите пароль для сети «%s»
+nerwork_wifi_forget	Забыть сеть
+nerwork_wifi_forget_dialog_desc	Автоматическое подключение к этой сети прекратится
+nerwork_wifi_forget_dialog_title	Забыть сеть?
+nerwork_wifi_pwd_error	Неверный пароль. Введите его ещё раз
+network_ap_close_tip	Точка доступа выключена
+network_ap_failed_tip	Не удалось включить точку доступа. Повторите попытку позже
+network_ap_open_tip	Точка доступа %s включена
+network_bluetooth_cancel_paired	Удалить сопряжение
+network_bluetooth_connect	Подключить
+network_bluetooth_find_title	Найденные устройства
+network_bluetooth_ok	OK
+network_bluetooth_paired	Сопряжено
+network_bluetooth_paired_status	Сопряжено
+network_ip_pair_over_text	Сетевое подключение восстановлено
+network_set_ip_reset	Восстановить IP-подключение
+network_set_way_hand	Вручную
+network_wifi_forget	Забыть сеть
+network_wifi_show_password	Показать пароль
+not_disturb_mode_desc	В режиме ожидания вентилятор не будет слышен, но голосовое управление, трансляция и пробуждение по Bluetooth станут недоступны
+not_disturb_mode_dialog_sure	Всё равно включить
+not_disturb_mode_end	Окончание
+not_disturb_mode_start	Начало
+not_support_light_sync_mode	Отключите синхронизацию яркости проекторов и повторите попытку
+not_support_picture_sync_mode	Отключите синхронизацию изображения проекторов и повторите попытку
+not_supported_hoisting_scenarios	Недоступно при потолочной установке
+one_click_screen_correction	Автокоррекция одним нажатием
+only_support_one_usb	Поддерживается только один внешний накопитель
+open_image_stitch	Сначала включите объединение изображений
+optics_zoom_and_tilt_shift	Оптический масштаб и сдвиг объектива
+picture_dolby	Dolby Vision
+picture_dolby_curtain_gain	Коэффициент усиления экрана
+picture_dolby_curtain_title	Размер экрана
+picture_dolby_curtain_tips	Укажите параметры экрана для оптимального Dolby Vision. Полный результат гарантируется только с официально поддерживаемыми экранами
+picture_dolby_soft	Dolby Vision Тёмный
+picture_dolby_bright	Dolby Vision Яркий
+picture_focus_text	Фокусировка
+picture_game_tips	Выберите базовый режим или минимальную задержку
+picture_gamut_native	Собственный
+picture_imax_enhanced_auto_tips	Автоматически включает IMAX Enhanced при распознавании поддерживаемого контента
+picture_screen_rotation_limited	Достигнут предел поворота
+picture_super_resolution_text	Повышение разрешения
+picture_windows_hdr_mapping_text	Тональное отображение Windows HDR
+pjlink_switch_text	Управление PJLink
+pjlink_tips	Позволяет управлять проектором по протоколу PJLink
+play_control_song	Воспроизвести
+play_text	Воспроизвести
+power_on_text	Автоматическое включение
+prof_to_smart_mode_tooltips	Доступны автокоррекция, автофокус, адаптация к цвету стены и умная защита глаз
+projection_area_self_adapt_title	Автообход препятствий
+projection_area_self_adapt_txt	При автокоррекции подбирает размер и положение изображения, обходя препятствия, например настенные выключатели
+projection_area_self_adapt_txt_xiaobai	При настройке изображения автоматически обходит препятствия, например настенные выключатели
+projector_id_txt	Идентификатор проектора
+ptz_advanced_settings	Автоматическая поворотная подставка
+ptz_displacement	Сдвиг поворотной подставкой
+ptz_recover_when_power_on	Восстанавливать положение при включении
+ptz_recover_when_power_on_tips	При включении подставка возвращает последний угол просмотра
+ptz_reset_when_power_off	Возвращать подставку при выключении
+ptz_reset_when_power_off_tips	При выключении подставка возвращается в исходное положение
+ptz_reset_when_power_on_off_tips	При включении восстанавливает угол просмотра, при выключении возвращается в исходное положение
+push_screen	Сдвиг изображения жестами
+push_screen_guide_title	Управление изображением жестами
+remote_controller_mode_default	Пульт
+remote_controller_mode_mouse	Мышь
+reset	Сброс
+reset_dialog_txt	Текущая коррекция изображения будет сброшена
+rgb_laser_tips	Насыщенные цвета. Рекомендуется, если вы не чувствительны к цветным контурам и лазерным спеклам
+screen_displacement_down_toast	Достигнуто крайнее нижнее положение
+screen_displacement_right_toast	Достигнуто крайнее правое положение
+screen_displacement_up_toast	Достигнуто крайнее верхнее положение
+screen_memory	Память изображения
+screen_memory_create	Добавить
+screen_memory_save_title	Заменить выбранный профиль текущими параметрами изображения?
+screen_memory_tips	Сохраните параметры изображения и положение подставки, чтобы затем восстановить их одним нажатием
+serial_number_text	Серийный номер устройства
+serial_port_control_id_group_text	Группа устройств RS232
+serial_port_control_id_group_tips	Вместе с номером устройства задаёт адрес для команд RS232
+serial_port_control_id_number_text	Номер устройства RS232
+serial_port_control_id_number_tips	Вместе с группой задаёт адрес устройства для команд RS232
+serial_port_control_master_mode_text	Режим ведущего
+serial_port_control_response_all_text	Ответ на общие команды
+serial_port_control_response_all_tips	Разрешает отвечать на команды всем устройствам. Включите только на одном проекторе
+serial_port_control_response_group_text	Ответ на групповые команды
+serial_port_control_response_group_tips	Разрешает отвечать на команды группе. Включите только на одном проекторе в группе
+serial_port_control_switch_text	Управление по последовательному порту
+serial_port_control_switch_tips	После отключения команды последовательного порта не выполняются
+serial_port_control_tips	Управление проектором командами последовательного порта
+set_more_open_tv_logo	Изображение при включении
+set_more_open_tv_logo_default	Нет
+set_more_radiation_eye_protection	Умная защита глаз
+share_audio_confirm	Подтвердить
+share_audio_sub_title_available_area_title	Доступные устройства
+share_audio_sub_title_share_area_title	Совместное прослушивание
+share_audio_title	Совместное прослушивание
+share_audio_title_desc	Сделайте аудиоустройства Bluetooth видимыми и выберите два для совместного прослушивания
+share_audio_action_disconnect_failed_tips	Убедитесь, что «%s» включено, и повторите подключение
+share_audio_action_disconnecting	Отключение…
+share_audio_action_share_success	Совместное прослушивание включено
+signal_boot_source_info_tips	Если включено управление проектором по HDMI и получена команда включения CEC, приоритет имеет соответствующий вход HDMI. Выбранный источник при включении в этом случае не используется
+signal_one_key_to_play_text	Автопереключение на источник
+signal_set_boot_source	Источник при включении
+signal_source_backup	Резервный источник сигнала
+signal_source_backup_none	Нет
+signal_source_screen_stitching	Объединение изображений
+signal_source_screen_stitching_settings	Настройки объединения изображений
+signal_source_setting_auto	Автопереключение на HDMI
+smart_curtain_guide_adjust_height_des	Кнопками «Вверх» и «Вниз» установите экран на удобную высоту
+smart_curtain_guide_adjust_height_title	Регулировка высоты экрана
+smart_curtain_guide_down	Вниз
+smart_curtain_guide_next	Готово
+smart_curtain_guide_up	Вверх
+smart_curtain_toast_highest	Достигнуто верхнее положение
+smart_curtain_toast_minimum	Достигнуто нижнее положение
+smart_space_ceiling	Просмотр на потолке
+smart_space_save_button	Сохранить
+smart_space_save_title	Сохранить текущие параметры для выбранной стены?
+smart_space_subtitle	Мои стены
+smart_space_window	Окно
+smart_to_prof_mode_tooltips	Расширенные возможности, включая оптический сдвиг объектива
+smart_wall_tips	Выберите или создайте профиль стены: поворотная подставка направит изображение в сохранённое положение
+sound_dolby_dialog_enhancer_text	Улучшение диалогов
+sound_dolby_surround_virtualizer_text	Виртуальный объёмный звук
+sound_dolby_volume_leveler_text	Выравнивание громкости
+sound_manual_switch	Ручной выбор
+sound_micro_phone_mode_meeting_text	Конференция
+sound_micro_phone_volume_setting_text	Громкость
+sound_mode_dolby_soundtrack_text	Dolby Atmos
+sound_mode_harman_kardon_soundtrack_v5_text	Harman Kardon
+sound_mode_movie_text	Кино
+sound_mode_sports_text	Спорт
+sound_mode_vocal_text	Голос
+sound_set_input_audio_arc_spdif	Оптический выход / ARC
+sound_set_input_audio_format_passthrough	Оптический выход / ARC — сквозной
+sound_set_input_audio_format_pcm	Оптический выход / ARC — PCM
+sound_set_input_audio_format_raw	Оптический выход / ARC — авто
+sound_set_input_audio_speaker_network_speaker	Встроенные динамики + XGIMI Sound
+sound_set_input_audio_speaker_xgimi_sound_system	Встроенные динамики + XGIMI Sound + сабвуфер
+sound_volume_balance_text	Баланс громкости
+speakers_combination	Акустическая система XGIMI
+speakers_combination_cancel	Разъединить акустическую систему
+speakers_combination_left_channel	Левый канал (L)
+speakers_combination_left_channel_name	Передний левый
+speakers_combination_right_channel	Правый канал (R)
+speakers_combination_right_channel_name	Передний правый
+speakers_combination_right_name	Правый
+speakers_combination_surround_left	Тыловой левый (LS)
+speakers_combination_surround_left_name	Тыловой левый
+speakers_combination_surround_right	Тыловой правый (RS)
+speakers_combination_surround_right_name	Тыловой правый
+speakers_combination_unpair_desc	После разъединения совместное воспроизведение станет недоступно
+speakers_combination_unpair_title	Разъединить акустическую систему?
+speakers_create_combination	Создать акустическую систему
+strength	Интенсивность
+sys_tempe_text	Температура
+theme_auto_day_text	Светлая тема
+theme_auto_night_text	Тёмная тема
+theme_auto_tips_text	Автоматически переключает светлую и тёмную темы по времени восхода и заката. Требуется подключение к сети
+theme_display_text	Тема оформления
+tips_upgrade_usb_state	Поместите файл обновления в корень USB-накопителя FAT32 и подключите его к порту USB 2.0 проектора
+title_focus	Фокусировка
+title_keystone	Скорректируйте трапецию так, чтобы центральная окружность стала ровным кругом
+title_smart_text	Умные функции
+toast_file_check_fail	Ошибка проверки файла. Код: 001
+toast_hind_time_switch_manual	Ручная установка даты и времени может нарушить доступ к сети
+toast_more_point_keystone_arrive_limit	Достигнут предел перемещения в этом направлении
+toast_net_server_fail	Ошибка сервера. Повторите попытку позже
+toast_no_history	Предыдущих версий пока нет
+toast_open_smart_curtain_error	Не удалось открыть приложение умного экрана. Проверьте, установлено ли оно
+tof_distance_near	Проектор слишком близко. Увеличьте расстояние
+tof_near	Проектор слишком близко. Калибровка не выполнена
+turbo_light_dialog_title	Включить Turbo Light?
+turbo_light_explain	При ярком освещении повышает яркость за счёт оптического масштабирования. Размер изображения меняется на 0–20 %
+turbo_light_reset	Восстановить
+turbo_light_reset_desc	Вернуть яркость и размер изображения до включения Turbo Light
+turbo_light_switch	Автоматический Turbo Light
+turbo_light_switch_tips	При ярком освещении автоматически повышает яркость за счёт оптического масштабирования. Размер изображения меняется на 0–20 %
+turbo_light_tips_str	При ярком освещении Turbo Light повышает яркость, изменяя размер изображения на 0–20 %
+upgrade_system	Обновление системы
+upgrade_usb_state_text	Обновление с USB
+upgrade_usb_text	Обновление с USB
+usb_error	Поместите файл обновления в корень USB-накопителя FAT32 и подключите его к порту USB 2.0 проектора
+usb_no_update_file	Поместите файл обновления в корень USB-накопителя FAT32 и подключите его к порту USB 2.0. Не меняйте имя файла
+usb_update_no_file	Пакет обновления не найден
+usb_update_no_usb	USB-накопитель не найден
+user_first_experience	Программа улучшения качества
+user_first_experience_join	Участвовать в программе улучшения качества
+user_first_experience_look	О программе улучшения качества
+vertical_angle	Угол наклона
+voice_arc_passthrough_text	Сквозной
+voice_audio_headset_text	Наушники
+voice_audio_spdif_arc_text	Оптический выход / ARC
+voice_audio_spdif_text	Оптический выход
+voice_boot_music_text	Звук при включении
+voice_key_tone_text	Звуки кнопок
+voice_optical_fiber_text	Оптический выход
+voice_output_text	Вывод звука
+voice_output_text_v1	Выход звука
+voice_output_tips	Выбор устройства и формата вывода звука
+voice_sound_system_text	Акустическая система
+wall_color_calibration	Адаптация к цвету стены
+wall_color_calibration_brightness_level	Изменение яркости отключает адаптацию к цвету стены
+wall_color_calibration_brightness_mode	Смена режима отключает адаптацию к цвету стены
+wall_color_calibration_brightness_rgb	Изменение цветов отключает адаптацию к цвету стены
+wall_color_calibration_brightness_self_adapt	Адаптация %1$s отключает адаптацию к цвету стены
+wall_color_calibration_env_self_adapt	Адаптация %1$s отключает адаптацию к цвету стены
+wall_color_calibration_mutex_black	Динамическое улучшение чёрного отключает адаптацию к цвету стены
+wall_color_calibration_dialog_desc_no	Учитывает цвет стены для естественной цветопередачи
+wall_color_calibration_switch_text	Адаптация к цвету стены
+wall_color_calibration_switch_text_str	При автокоррекции учитывается цвет стены
+wall_color_calibration_text	Адаптация к цвету стены
+wall_color_calibration_tips	Учитывает цвет стены для естественной цветопередачи
+wall_color_dialog_title	Включить адаптацию к цвету стены?
+wifi_add_none	Без защиты
+wifi_add_other_ssid_error_tip	Введите SSID
+wifi_authentication_subtitle	Если страница не загружается или содержимое не отображается, нажмите «Назад» для выхода
+wifi_connect_bt	Подключить
+wifi_dialog_network_page_tip	Сведения о сети Wi-Fi
+wifi_list_more	Ещё
+wifi_security	Безопасность
+wifi_security_type_none	Без защиты
+wifi_txt	Текущая сеть Wi-Fi:
+wired_mac_text	MAC-адрес Ethernet
+wireless_mac_text	MAC-адрес Wi-Fi
+xgimi_sound_effects_text	Звуковые эффекты XGIMI Sound
+xgimi_sound_sky_sound_effect	Высотный звук Total Immersion
+zoom_end_toast	Изображение размыто? Нажмите @ для автофокуса
+zoom_move_limit_tip1	После сдвига объектива защита глаз может не работать на некоторых расстояниях. Адаптация к цвету стены и память изображения станут недоступны
+zoom_move_limit_tip2	После сдвига объектива защита глаз может не работать на некоторых расстояниях. Адаптация к цвету стены, автопозиционирование и «Умная стена» станут недоступны
+abc_action_bar_home_description	Перейти на главный экран
+abc_action_bar_up_description	Перейти вверх
+abc_action_menu_overflow_description	Ещё
+abc_action_mode_done	Готово
+abc_activity_chooser_view_see_all	Показать все
+abc_activitychooserview_choose_application	Выберите приложение
+abc_capital_off	ВЫКЛ
+abc_capital_on	ВКЛ
+abc_menu_enter_shortcut_label	Ввод
+abc_menu_space_shortcut_label	Пробел
+abc_prepend_shortcut_label	Меню +
+abc_search_hint	Введите запрос
+abc_searchview_description_clear	Удалить запрос
+abc_searchview_description_query	Поисковый запрос
+abc_searchview_description_search	Поиск
+abc_searchview_description_submit	Отправить запрос
+abc_searchview_description_voice	Голосовой поиск
+abc_shareactionprovider_share_with	Поделиться с помощью
+abc_shareactionprovider_share_with_application	Поделиться с помощью %s
+abc_toolbar_collapse_description	Свернуть
+exo_download_completed	Скачивание завершено
+exo_download_description	Скачать
+exo_download_downloading	Скачивание…
+exo_download_failed	Ошибка скачивания
+exo_download_notification_channel_name	Скачивания
+exo_download_paused	Скачивание приостановлено
+exo_download_paused_for_network	Ожидание подключения к сети
+exo_download_paused_for_wifi	Ожидание подключения к Wi-Fi
+exo_download_removing	Удаление скачанных файлов…
+search_menu_title	Поиск
+zxing_app_name	Сканер штрих-кодов
+zxing_msg_camera_framework_bug	К сожалению, возникла ошибка камеры. Может потребоваться перезагрузить устройство.
+zxing_msg_default_status	Чтобы сканировать штрих-код, поместите его в прямоугольник видоискателя.
+manual	Вручную
+time_switch_manual	Вручную
+brightness_adjustment_desc	Яркость регулируется диафрагмой IRIS. При низкой яркости изображение контрастнее и чётче
+auxiliary_curtain_alignment_desc	Переместите проектор так, чтобы изображение выходило за все четыре края экрана
+camrea_correct_tip2	Установите проектор так, чтобы изображение полностью покрывало экран. Угол боковой проекции — не более 20°
+close_power_on_auto_project_retry	Отключите автопозиционирование изображения при включении и повторите попытку
+curtain_projection_self_adapt_txt	Подгоняет изображение под границы экрана. Перед настройкой убедитесь, что изображение полностью покрывает экран
+displacement_end_tip	Сдвиг может снизить чёткость. Нажмите @ для ручной фокусировки
+eye_project_confirm_desc	После отключения яркость не будет снижаться при появлении человека перед объективом. Не смотрите прямо на источник света
+hidden_diagnosis_dialog_message	Во время диагностики служба XGIMI будет удалённо управлять устройством для поиска неисправности. После проверки следуйте указаниям службы поддержки, чтобы завершить сеанс
+image_mode_state_tips	Выберите режим под просматриваемый контент и настройте цветовое пространство, компенсацию движения и другие параметры
+lighting_bioclock_tips	Настраивает цветовую температуру в зависимости от дневного света для естественного освещения в течение дня
+lighting_delay_off_tips	Выберите задержку выключения света после нажатия кнопки отложенного выключения
+logcat_des_text	При включении журналирования записи работы системы будут отправлены для диагностики. Конфиденциальность данных сохраняется. Спасибо за помощь
+mutex_turbo_light_dialog_desc	Turbo Light уменьшает изображение оптическим масштабированием для повышения яркости. После отключения размер и яркость изменятся
+not_support_in_shift_retry	После сдвига объектива эта функция недоступна. Сбросьте положение изображения и повторите попытку
+personal_recommend_tips	Рекомендации по истории просмотра. После отключения показывается популярный контент
+picture_auto_filmmaker_mode_tips	Автоматически включает FILMMAKER MODE при распознавании поддерживаемого контента
+picture_filmmaker_mode_tips	Отключает постобработку для сохранения авторского замысла. Подходит для просмотра кино
+picture_mode_tips_page2	Выбор режима и настройка компенсации движения. Доступно при воспроизведении видео или через HDMI
+push_screen_guide_pull	Сожмите руку в кулак у изображения и, когда появится подсказка, медленно потяните её к себе
+push_screen_guide_push	Поднесите руку к краю изображения и, когда появится подсказка, медленно толкните вперёд
+set_more_bluetooth_title	Синхронизирует громкость проектора и Bluetooth-устройства. Отдельная регулировка громкости может стать недоступна
+smart_screen_tips	Два варианта разделения: рядом и «картинка в картинке»
+sound_auto_arc_switch_tips	Автоматически выбран оптический выход / ARC. Можно изменить формат вывода звука
+sound_auto_switch_tips	Автоматически выбирает выход при подключении аудиоустройства. После отключения этой функции выход выбирается вручную
+sound_micro_phone_mode_meeting_tips	Оптимизирует звук для конференций и защищает от случайного нажатия голосовой кнопки микрофона
+sound_mode_movie_tips	Эффекты высотного звука Total Immersion и объёмного звука Total Surround создают эффект погружения при просмотре кино
+sound_system_switch_tips	Автоматически выбрана акустическая система. Можно настроить совместную работу устройств
+speakers_combination_unpair_descs	После удаления сопряжения удерживайте кнопку колонки, чтобы снова подключить систему XGIMI Sound
+speakers_unpair_desc	После удаления сопряжения удерживайте кнопку колонки, чтобы снова подключить XGIMI Sound
+vertical_keystone_d_not_keystone	Ручная коррекция недоступна при включённой автоматической вертикальной коррекции трапеции
+wall_color_calibration_dialog_desc	Для точной цветопередачи яркость увеличится до максимума, а адаптация к окружающему освещению отключится
+play_control_song_vip	Прослушать фрагмент VIP
+play_control_song_vip_user	Воспроизвести VIP

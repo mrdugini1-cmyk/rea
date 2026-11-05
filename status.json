@@ -1,0 +1,33 @@
+{
+  "translation_complete_for_reviewed_scope": true,
+  "resources_editorial": 924,
+  "resources_v1_chinese": 262,
+  "layout_pool_values_v1": 18,
+  "dex_const_string_changes": 147,
+  "dex_classes_changed": 70,
+  "hardware_tested": false,
+  "deployment_complete": false,
+  "device": {
+    "model": "XGIMI Z9X HB",
+    "fingerprint": "XGIMI/Product_dapengfhm/goat_elegant:13/TP1A.220624.021.A1/v6.17.12:user/dev-keys",
+    "adb_uid": 2000,
+    "ro.debuggable": "0",
+    "ro.build.type": "user",
+    "init.svc.xgimi_ssh": "running",
+    "xgimi.remoteDebug.on": "true",
+    "su_in_path": false,
+    "ssh_dir_mode": "0777",
+    "ssh_params_mode": "0600",
+    "ssh_params_size": 0,
+    "root_login_verified": false,
+    "service_script": "/vendor/bin/xgimi_ssh.sh",
+    "script_contents_received": true,
+    "ssh_port": 22,
+    "password_authentication": false,
+    "pubkey_authentication": true,
+    "service_restart_exit_status": 0
+  },
+  "payload_sha256": "8865275d03988a9a24ece2c99d3d386a33937c96c52f60f317904c859b73dee5",
+  "root_probe_prepared": true,
+  "root_probe_hardware_tested": false
+}
