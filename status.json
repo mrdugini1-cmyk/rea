@@ -37,5 +37,12 @@
   "reported_before_apk_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
   "reported_candidate_apk_sha256": "a3371e5bbec22e0ac154f96060ebe11a296daeebc9b96f0c5f68f03193c142fb",
   "preview_prepared": true,
-  "preview_hardware_tested": false
+  "preview_hardware_tested": false,
+  "preview_runtime_preflight_hardware_tested": true,
+  "preview_hardware_applied": false,
+  "reported_preview_phase": "ROLLBACK_BASELINE_CHANGED",
+  "reported_adb_apk_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
+  "reported_adb_mount_namespace": "mnt:[4026531841]",
+  "root_apk_sha256_unknown": true,
+  "namespace_diagnostics_prepared": true
 }

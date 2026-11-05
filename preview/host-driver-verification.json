@@ -10,5 +10,10 @@
   "nonzero_native_exit_rejected": true,
   "interrupted_prearm_transfer_resumed_with_receipt_preserved": true,
   "possibly_armed_stage_not_resumed": true,
+  "namespace_diagnostic_after_confirmed_exit_passed": true,
+  "diagnostic_uploads_no_apk": true,
+  "diagnostic_does_not_send_home": true,
+  "diagnostic_rollback_reports_no_overlay": true,
+  "active_preview_not_interrupted_by_diagnostic": true,
   "real_android_execution": false
 }

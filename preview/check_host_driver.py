@@ -20,9 +20,12 @@ elif args and args[0]=='shell':
  cmd=' '.join(args[1:])
  if 'TRANSFER_NEVER_ARMED' in cmd:print('TRANSFER_NEVER_ARMED' if s.get('resume_safe',True) else 'PRIOR_STAGE_MAY_HAVE_STARTED')
  elif '/phase' in cmd:print(s['phase'])
- elif '/arm.sh' in cmd:print('ROOT_STAGE_STARTED')
+ elif '/arm.sh' in cmd:
+  if s.get('diagnose'):s['phase']='DIAGNOSTIC_DONE';s['exit_code']='0';(root/'state.json').write_text(json.dumps(s))
+  print('ROOT_STAGE_STARTED')
  elif '/rollback.request' in cmd:s['phase']='ROLLED_BACK';(root/'state.json').write_text(json.dumps(s))
  elif '/session.log' in cmd:print('fake diagnostic log')
+ elif '/exit-code' in cmd:print(s.get('exit_code',''))
 ''');adb.chmod(0o755)
  meta=dict(adb=str(adb),serial=None,before_apk=str(before),before_sha256=beforehash,candidate_apk=str(candidate),candidate_sha256=h(candidate));(session/'session.json').write_text(json.dumps(meta,ensure_ascii=False))
  (session/'runtime.json').write_text(json.dumps(dict(remote_stage='/data/ssh/z9x-ru-preview-'+'a'*32,before_sha256=beforehash,candidate_sha256=h(candidate))))
@@ -41,6 +44,16 @@ elif args and args[0]=='shell':
  state.write_text(json.dumps({'phase':'APPLIED_5_MINUTES','resume_safe':False}));log.write_text('')
  refused=subprocess.run(cmd,env=env,text=True,capture_output=True);assert refused.returncode!=0;assert 'cannot be resumed automatically' in refused.stderr
  assert not any(json.loads(l)[0]=='push' for l in log.read_text().splitlines())
+ # Namespace diagnosis may replace a receipt only after the prior helper has exited.
+ state.write_text(json.dumps({'phase':'ROLLBACK_BASELINE_CHANGED','exit_code':'28','diagnose':True}));log.write_text('')
+ diagnostic=subprocess.run(cmd+['-Diagnose'],env=env,text=True,capture_output=True);assert diagnostic.returncode==0,(diagnostic.stdout,diagnostic.stderr);assert 'DIAGNOSTIC_DONE' in diagnostic.stdout
+ diagnostic_calls=[json.loads(l) for l in log.read_text().splitlines()]
+ assert not any(a[0]=='push' and a[-1].endswith('/upload.apk') for a in diagnostic_calls)
+ assert not any(a[:2]==['shell','input'] for a in diagnostic_calls)
+ assert any(a[0]=='push' and a[1].endswith('diagnose-body.sh') for a in diagnostic_calls)
+ diag_rollback=subprocess.run(cmd+['-Rollback'],env=env,text=True,capture_output=True);assert diag_rollback.returncode==0,(diag_rollback.stdout,diag_rollback.stderr);assert 'no APK overlay' in diag_rollback.stdout
+ state.write_text(json.dumps({'phase':'APPLIED_5_MINUTES','resume_safe':False}));log.write_text('')
+ active=subprocess.run(cmd+['-Diagnose'],env=env,text=True,capture_output=True);assert active.returncode!=0;assert not any(json.loads(l)[0]=='push' for l in log.read_text().splitlines())
  # A native nonzero exit remains a failure even with stderr capture made non-terminating.
  (session/'runtime.json').unlink();state.write_text(json.dumps({'phase':'APPLIED_5_MINUTES','push_failure':True}));log.write_text('')
  failed=subprocess.run(cmd,env=env,text=True,capture_output=True);assert failed.returncode!=0;assert 'ADB failed: transfer failed' in failed.stderr
@@ -49,5 +62,5 @@ elif args and args[0]=='shell':
  (session/'runtime.json').unlink();log.write_text('')
  bad=subprocess.run(cmd,env=env,text=True,capture_output=True);assert bad.returncode!=0;assert 'Local candidate differs' in bad.stderr
  assert not any(json.loads(l)[0]=='push' for l in log.read_text().splitlines())
- result=dict(scope=__doc__,powershell_runtime='7.4.6 Linux',unicode_paths_preserved=True,latest_prepared_session_selection_passed=True,normal_apply_driver_path_passed=True,rollback_driver_path_passed=True,tampered_candidate_refused_before_upload=True,native_stderr_success_accepted=True,nonzero_native_exit_rejected=True,interrupted_prearm_transfer_resumed_with_receipt_preserved=True,possibly_armed_stage_not_resumed=True,real_android_execution=False)
+ result=dict(scope=__doc__,powershell_runtime='7.4.6 Linux',unicode_paths_preserved=True,latest_prepared_session_selection_passed=True,normal_apply_driver_path_passed=True,rollback_driver_path_passed=True,tampered_candidate_refused_before_upload=True,native_stderr_success_accepted=True,nonzero_native_exit_rejected=True,interrupted_prearm_transfer_resumed_with_receipt_preserved=True,possibly_armed_stage_not_resumed=True,namespace_diagnostic_after_confirmed_exit_passed=True,diagnostic_uploads_no_apk=True,diagnostic_does_not_send_home=True,diagnostic_rollback_reports_no_overlay=True,active_preview_not_interrupted_by_diagnostic=True,real_android_execution=False)
  (r/'host-driver-verification.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))

@@ -1,5 +1,6 @@
-param([string]$SessionPath, [switch]$Rollback)
+param([string]$SessionPath, [switch]$Rollback, [switch]$Diagnose)
 $ErrorActionPreference = 'Stop'
+if ($Rollback -and $Diagnose) { throw 'Choose either -Rollback or -Diagnose' }
 if (-not $SessionPath) {
     $buildRoot = Join-Path (Get-Location).Path 'z9x-hb-build'
     if (-not (Test-Path -LiteralPath $buildRoot -PathType Container)) { throw 'Run prepare-preview.ps1 first; build directory not found' }
@@ -53,6 +54,12 @@ if ($Rollback) {
     $remote = [string]$receipt.remote_stage
     if ($remote -notmatch '^/data/ssh/z9x-ru-preview-[0-9a-f]{32}$') { throw 'Invalid saved preview path' }
     $phase = Read-Phase $remote
+    if ($receipt.kind -eq 'diagnostic') {
+        if ($phase -ne 'DIAGNOSTIC_DONE') { throw 'This is a read-only diagnostic stage; wait for it to finish. It creates no APK overlay.' }
+        Clear-CachedRequest
+        Write-Host 'DIAGNOSTIC_DONE: this stage created no APK overlay.'
+        exit 0
+    }
     if ($phase -ne 'ROLLED_BACK') {
         [void](Invoke-AdbText -Arguments @('shell', ('printf "ROLLBACK\n" > "{0}/rollback.request"' -f $remote)))
         for ($i=0; $i -lt 90; $i++) {
@@ -73,6 +80,11 @@ if ([IO.File]::Exists($receiptPath)) {
     $previousRemote = [string]$previous.remote_stage
     if ($previousRemote -notmatch '^/data/ssh/z9x-ru-preview-[0-9a-f]{32}$') { throw 'Invalid previous preview path; leaving its record untouched' }
     if ($previous.before_sha256 -cne $meta.before_sha256 -or $previous.candidate_sha256 -cne $meta.candidate_sha256) { throw 'Previous runtime record belongs to different APKs' }
+    $terminalStage = $false
+    $previousPhase = Read-Phase $previousRemote
+    $exitCode = Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/exit-code" ]; then cat "{0}/exit-code"; fi' -f $previousRemote))
+    if ($Diagnose -and $previousPhase -match '^(ROLLED_BACK|ROLLBACK_[A-Z_]+|MAINTENANCE_RESTART_FAILED|PREFLIGHT_MOUNT_UNDO_FAILED)$' -and $exitCode -match '^\d+$') { $terminalStage = $true }
+    if ($previousPhase -eq 'DIAGNOSTIC_DONE' -and $exitCode -eq '0') { $terminalStage = $true }
     $probe = @'
 set -eu
 D='%REMOTE%'
@@ -84,32 +96,41 @@ fi
 echo TRANSFER_NEVER_ARMED
 '@
     $probe = $probe.Replace('%REMOTE%', $previousRemote).Replace("`r", '')
-    $probeResult = Invoke-AdbText -Arguments @('shell', $probe)
+    $probeResult = 'TRANSFER_NEVER_ARMED'
+    if (-not $terminalStage) { $probeResult = Invoke-AdbText -Arguments @('shell', $probe) }
     if ($probeResult -cne 'TRANSFER_NEVER_ARMED') { throw ('Previous stage cannot be resumed automatically: ' + $probeResult + '. Use -Rollback or send this output.') }
-    $archivedReceipt = Join-Path $SessionPath ('runtime.failed-transfer-' + [Guid]::NewGuid().ToString('N') + '.json')
+    $receiptPrefix = 'runtime.failed-transfer-'
+    if ($terminalStage) { $receiptPrefix = 'runtime.completed-stage-' }
+    $archivedReceipt = Join-Path $SessionPath ($receiptPrefix + [Guid]::NewGuid().ToString('N') + '.json')
     Move-Item -LiteralPath $receiptPath -Destination $archivedReceipt
-    Write-Host 'Previous stage stopped before arming; saved its receipt and starting a new transfer.'
+    if ($terminalStage) { Write-Host 'Previous stage has finished; saved its receipt.' } else { Write-Host 'Previous stage stopped before arming; saved its receipt and starting a new transfer.' }
 }
 foreach ($value in @($meta.before_sha256, $meta.candidate_sha256)) { if ($value -notmatch '^[0-9a-f]{64}$') { throw 'Invalid stored SHA-256' } }
 if ((Get-FileHash -Algorithm SHA256 -LiteralPath $meta.before_apk).Hash.ToLowerInvariant() -cne $meta.before_sha256) { throw 'Local original APK differs' }
 if ((Get-FileHash -Algorithm SHA256 -LiteralPath $meta.candidate_apk).Hash.ToLowerInvariant() -cne $meta.candidate_sha256) { throw 'Local candidate differs' }
 $live = Invoke-AdbText -Arguments @('shell','sha256sum','/system/priv-app/release_838_newsettings/release_838_newsettings.apk')
-if (($live -split '\s+')[0] -cne $meta.before_sha256) { throw 'Current projector APK changed after the backup; no preview started' }
+if (-not $Diagnose -and ($live -split '\s+')[0] -cne $meta.before_sha256) { throw 'Current projector APK changed after the backup; no preview started' }
+if ($Diagnose) {
+    Write-Host ('ADB_APK: ' + $live)
+    Write-Host ('ADB_MOUNT_NS: ' + (Invoke-AdbText -Arguments @('shell','readlink','/proc/self/ns/mnt')))
+}
 $remote = '/data/ssh/z9x-ru-preview-' + [Guid]::NewGuid().ToString('N')
 [void](Invoke-AdbText -Arguments @('shell', ('mkdir "{0}" && chmod 700 "{0}"' -f $remote)))
-$receipt = [ordered]@{ remote_stage=$remote; before_sha256=$meta.before_sha256; candidate_sha256=$meta.candidate_sha256; max_preview_seconds=300; persistent=$false; lifecycle='transferring' }
+$receipt = [ordered]@{ kind='preview'; remote_stage=$remote; before_sha256=$meta.before_sha256; candidate_sha256=$meta.candidate_sha256; max_preview_seconds=300; persistent=$false; lifecycle='transferring' }
+if ($Diagnose) { $receipt['kind'] = 'diagnostic' }
 [IO.File]::WriteAllText($receiptPath, ($receipt | ConvertTo-Json), [Text.UTF8Encoding]::new($false))
-foreach ($name in @('runtime-entry.sh','runtime-body.sh')) {
-    [void](Invoke-AdbText -Arguments @('push', (Join-Path $PSScriptRoot $name), ($remote + '/' + $name)))
-}
-[void](Invoke-AdbText -Arguments @('push', [string]$meta.candidate_apk, ($remote + '/upload.apk')))
+[void](Invoke-AdbText -Arguments @('push', (Join-Path $PSScriptRoot 'runtime-entry.sh'), ($remote + '/runtime-entry.sh')))
+$bodyName = 'runtime-body.sh'
+if ($Diagnose) { $bodyName = 'diagnose-body.sh' }
+[void](Invoke-AdbText -Arguments @('push', (Join-Path $PSScriptRoot $bodyName), ($remote + '/runtime-body.sh')))
+if (-not $Diagnose) { [void](Invoke-AdbText -Arguments @('push', [string]$meta.candidate_apk, ($remote + '/upload.apk'))) }
 foreach ($pair in @(@('before.sha256', $meta.before_sha256), @('candidate.sha256', $meta.candidate_sha256))) {
     $path = Join-Path $SessionPath $pair[0]
     [IO.File]::WriteAllText($path, ($pair[1] + "`n"), [Text.Encoding]::ASCII)
     [void](Invoke-AdbText -Arguments @('push', $path, ($remote + '/' + $pair[0])))
 }
 # Ordinary HOME navigation closes the settings overlay before the scoped refresh.
-[void](Invoke-AdbText -Arguments @('shell','input','keyevent','3'))
+if (-not $Diagnose) { [void](Invoke-AdbText -Arguments @('shell','input','keyevent','3')) }
 $arm = @'
 set -eu
 umask 077
@@ -157,7 +178,20 @@ $lastPhase = ''
 for ($i=0; $i -lt 180; $i++) {
     $phase = Read-Phase $remote
     if ($phase -and $phase -ne $lastPhase) { Write-Host ('PHASE: ' + $phase); $lastPhase = $phase }
-    if ($phase -eq 'APPLIED_5_MINUTES') {
+    if ($Diagnose -and $phase -eq 'DIAGNOSTIC_DONE') {
+        # Let the root wrapper finish before clearing its cached SSH arguments.
+        for ($j=0; $j -lt 5; $j++) {
+            $done = Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/exit-code" ]; then cat "{0}/exit-code"; fi' -f $remote))
+            if ($done -eq '0') { break }
+            Start-Sleep -Seconds 1
+        }
+        if ($done -ne '0') { Read-Log $remote; throw 'Diagnostic exit is not confirmed; send this output before restarting SSH' }
+        Clear-CachedRequest
+        Read-Log $remote
+        Write-Host 'DIAGNOSTIC_DONE: no APK replacement or mount performed.'
+        exit 0
+    }
+    if (-not $Diagnose -and $phase -eq 'APPLIED_5_MINUTES') {
         Write-Host 'APPLIED_5_MINUTES: open projector settings with the remote and inspect the translation.'
         Write-Host ('SESSION: ' + $SessionPath)
         Write-Host 'Automatic rollback follows after five minutes. Do not restart SSH or rerun root-probe during this window.'
