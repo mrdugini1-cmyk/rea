@@ -6,5 +6,9 @@
   "normal_apply_driver_path_passed": true,
   "rollback_driver_path_passed": true,
   "tampered_candidate_refused_before_upload": true,
+  "native_stderr_success_accepted": true,
+  "nonzero_native_exit_rejected": true,
+  "interrupted_prearm_transfer_resumed_with_receipt_preserved": true,
+  "possibly_armed_stage_not_resumed": true,
   "real_android_execution": false
 }

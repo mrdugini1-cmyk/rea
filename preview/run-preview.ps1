@@ -17,9 +17,17 @@ if (-not [IO.File]::Exists($adb)) { throw 'Saved adb.exe not found' }
 $selectArgs = @()
 if ($meta.serial) { $selectArgs = @('-s', [string]$meta.serial) }
 function Invoke-AdbText([string[]]$Arguments) {
-    $lines = & $adb @selectArgs @Arguments 2>&1
-    $code = $LASTEXITCODE
-    $text = ($lines | Out-String).Trim()
+    # Windows PowerShell 5.1 wraps merged native stderr in ErrorRecord objects.
+    # ADB progress on stderr is successful when the native exit code is zero.
+    $previousPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $lines = & $adb @selectArgs @Arguments 2>&1
+        $code = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $previousPreference
+    }
+    $text = (($lines | ForEach-Object { $_.ToString() }) -join "`n").Trim()
     if ($code -ne 0) { throw ('ADB failed: ' + $text) }
     return $text
 }
@@ -60,7 +68,28 @@ if ($Rollback) {
     Write-Host 'ROLLED_BACK: previous APK restored and preview service state cleaned up.'
     exit 0
 }
-if ([IO.File]::Exists($receiptPath)) { throw 'This session already has a runtime record; use -Rollback or prepare a new session' }
+if ([IO.File]::Exists($receiptPath)) {
+    $previous = Get-Content -Raw -Encoding UTF8 -LiteralPath $receiptPath | ConvertFrom-Json
+    $previousRemote = [string]$previous.remote_stage
+    if ($previousRemote -notmatch '^/data/ssh/z9x-ru-preview-[0-9a-f]{32}$') { throw 'Invalid previous preview path; leaving its record untouched' }
+    if ($previous.before_sha256 -cne $meta.before_sha256 -or $previous.candidate_sha256 -cne $meta.candidate_sha256) { throw 'Previous runtime record belongs to different APKs' }
+    $probe = @'
+set -eu
+D='%REMOTE%'
+if [ -L "$D" ] || [ -e "$D/arm.sh" ] || [ -e "$D/once" ] || [ -e "$D/phase" ] || [ -e "$D/original.params" ]; then
+ echo PRIOR_STAGE_MAY_HAVE_STARTED
+ exit 0
+fi
+[ ! -L /data/ssh/params ] && [ "$(stat -c '%u:%a:%s' /data/ssh/params)" = '0:600:0' ] || { echo SSH_PARAMS_NOT_BASELINE; exit 0; }
+echo TRANSFER_NEVER_ARMED
+'@
+    $probe = $probe.Replace('%REMOTE%', $previousRemote).Replace("`r", '')
+    $probeResult = Invoke-AdbText -Arguments @('shell', $probe)
+    if ($probeResult -cne 'TRANSFER_NEVER_ARMED') { throw ('Previous stage cannot be resumed automatically: ' + $probeResult + '. Use -Rollback or send this output.') }
+    $archivedReceipt = Join-Path $SessionPath ('runtime.failed-transfer-' + [Guid]::NewGuid().ToString('N') + '.json')
+    Move-Item -LiteralPath $receiptPath -Destination $archivedReceipt
+    Write-Host 'Previous stage stopped before arming; saved its receipt and starting a new transfer.'
+}
 foreach ($value in @($meta.before_sha256, $meta.candidate_sha256)) { if ($value -notmatch '^[0-9a-f]{64}$') { throw 'Invalid stored SHA-256' } }
 if ((Get-FileHash -Algorithm SHA256 -LiteralPath $meta.before_apk).Hash.ToLowerInvariant() -cne $meta.before_sha256) { throw 'Local original APK differs' }
 if ((Get-FileHash -Algorithm SHA256 -LiteralPath $meta.candidate_apk).Hash.ToLowerInvariant() -cne $meta.candidate_sha256) { throw 'Local candidate differs' }
@@ -68,7 +97,7 @@ $live = Invoke-AdbText -Arguments @('shell','sha256sum','/system/priv-app/releas
 if (($live -split '\s+')[0] -cne $meta.before_sha256) { throw 'Current projector APK changed after the backup; no preview started' }
 $remote = '/data/ssh/z9x-ru-preview-' + [Guid]::NewGuid().ToString('N')
 [void](Invoke-AdbText -Arguments @('shell', ('mkdir "{0}" && chmod 700 "{0}"' -f $remote)))
-$receipt = [ordered]@{ remote_stage=$remote; before_sha256=$meta.before_sha256; candidate_sha256=$meta.candidate_sha256; max_preview_seconds=300; persistent=$false }
+$receipt = [ordered]@{ remote_stage=$remote; before_sha256=$meta.before_sha256; candidate_sha256=$meta.candidate_sha256; max_preview_seconds=300; persistent=$false; lifecycle='transferring' }
 [IO.File]::WriteAllText($receiptPath, ($receipt | ConvertTo-Json), [Text.UTF8Encoding]::new($false))
 foreach ($name in @('runtime-entry.sh','runtime-body.sh')) {
     [void](Invoke-AdbText -Arguments @('push', (Join-Path $PSScriptRoot $name), ($remote + '/' + $name)))
@@ -119,6 +148,8 @@ $arm = $arm.Replace('%REMOTE%', $remote).Replace("`r", '')
 $armPath = Join-Path $SessionPath 'arm-preview.sh'
 [IO.File]::WriteAllText($armPath, $arm, [Text.Encoding]::ASCII)
 [void](Invoke-AdbText -Arguments @('push', $armPath, ($remote + '/arm.sh')))
+$receipt['lifecycle'] = 'arming'
+[IO.File]::WriteAllText($receiptPath, ($receipt | ConvertTo-Json), [Text.UTF8Encoding]::new($false))
 Write-Host ('REMOTE_STAGE: ' + $remote)
 Write-Host ('RECOVERY_IF_ARM_INTERRUPTED: adb shell mv ' + $remote + '/original.params /data/ssh/params')
 Write-Host (Invoke-AdbText -Arguments @('shell', ('sh "{0}/arm.sh"' -f $remote)))
