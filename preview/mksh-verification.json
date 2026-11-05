@@ -1,0 +1,9 @@
+{
+  "shell": "@(#)MIRBSD KSH R59 2025/12/23 +Debian",
+  "original_alias_conflict_reproduced": true,
+  "production_prefixed_helper_returns_expected_sha256": true,
+  "path_with_spaces_checked": true,
+  "production_script_mksh_parse_passed": true,
+  "device_alias_conflict_reported_by_user": true,
+  "preview_not_yet_applied": true
+}

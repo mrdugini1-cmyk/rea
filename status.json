@@ -43,6 +43,11 @@
   "reported_preview_phase": "ROLLBACK_BASELINE_CHANGED",
   "reported_adb_apk_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
   "reported_adb_mount_namespace": "mnt:[4026531841]",
-  "root_apk_sha256_unknown": true,
-  "namespace_diagnostics_prepared": true
+  "root_apk_sha256_unknown": false,
+  "namespace_diagnostics_prepared": true,
+  "reported_root_apk_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
+  "reported_all_checked_namespaces_same_apk": true,
+  "confirmed_failure_cause": "Android mksh built-in hash alias shadows script function; empty result caused false mismatch",
+  "hash_alias_fix_prepared": true,
+  "mksh_regression_passed": true
 }

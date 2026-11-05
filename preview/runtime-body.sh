@@ -15,7 +15,7 @@ CLEANED=0
 OWN_MOUNT=
 BEFORE_HASH=
 phase() { printf '%s\n' "$1" > "$D/phase.tmp"; chmod 644 "$D/phase.tmp"; mv "$D/phase.tmp" "$D/phase"; }
-hash() { sha256sum "$1" | awk '{print $1}'; }
+z9x_file_sha256() { sha256sum "$1" | awk '{print $1}'; }
 mount_id() {
  exec 8< "$TARGET"
  awk '$1=="mnt_id:" {print $2}' /proc/self/fdinfo/8
@@ -64,7 +64,7 @@ rollback() {
   fi
  fi
  if [ "$MOUNTED" = 0 ]; then
-  if [ -n "$BEFORE_HASH" ] && [ "$(hash "$TARGET")" != "$BEFORE_HASH" ]; then
+  if [ -n "$BEFORE_HASH" ] && [ "$(z9x_file_sha256 "$TARGET")" != "$BEFORE_HASH" ]; then
    ROLLBACK_STATE=ROLLBACK_BASELINE_CHANGED
    echo 'Underlying APK differs from the saved baseline; no further mount performed.'
   elif [ "$STOPPED_SETTINGS" = 1 ]; then
@@ -93,19 +93,19 @@ main() {
  printf '%s\n' "$BEFORE_HASH" | grep -Eq '^[0-9a-f]{64}$' || exit 25
  printf '%s\n' "$CANDIDATE_HASH" | grep -Eq '^[0-9a-f]{64}$' || exit 26
  [ "$BEFORE_HASH" != "$CANDIDATE_HASH" ] || exit 27
- [ "$(hash "$TARGET")" = "$BEFORE_HASH" ] || { echo 'Current APK changed since backup'; exit 28; }
- [ "$(hash "$D/upload.apk")" = "$CANDIDATE_HASH" ] || exit 29
+ [ "$(z9x_file_sha256 "$TARGET")" = "$BEFORE_HASH" ] || { echo 'Current APK changed since backup'; exit 28; }
+ [ "$(z9x_file_sha256 "$D/upload.apk")" = "$CANDIDATE_HASH" ] || exit 29
  mkdir "$S"
  chmod 700 "$S"
  cp "$TARGET" "$S/before.apk"
- [ "$(hash "$S/before.apk")" = "$BEFORE_HASH" ] || exit 30
+ [ "$(z9x_file_sha256 "$S/before.apk")" = "$BEFORE_HASH" ] || exit 30
  cp "$D/upload.apk" "$S/candidate.apk"
  chown 0:0 "$S/candidate.apk"
  chmod 644 "$S/candidate.apk"
  CONTEXT=$(ls -Zd "$TARGET" | awk '{print $1}')
  case "$CONTEXT" in u:object_r:*:s0) ;; *) exit 31 ;; esac
  chcon "$CONTEXT" "$S/candidate.apk"
- [ "$(hash "$S/candidate.apk")" = "$CANDIDATE_HASH" ] || exit 32
+ [ "$(z9x_file_sha256 "$S/candidate.apk")" = "$CANDIDATE_HASH" ] || exit 32
  # Verify bind and undo with private scratch files before stopping any service or replacing Settings.
  printf 'source\n' > "$S/mount-source"
  printf 'baseline\n' > "$S/mount-target"
@@ -143,7 +143,7 @@ main() {
  while pgrep -f '[Z]9xHbNativeSettings' >/dev/null 2>&1; do
   N=$((N+1)); [ "$N" -lt 20 ] || { echo 'Existing maintenance still active'; exit 34; }; sleep 1
  done
- [ "$(hash "$TARGET")" = "$BEFORE_HASH" ] || exit 35
+ [ "$(z9x_file_sha256 "$TARGET")" = "$BEFORE_HASH" ] || exit 35
  PREVIOUS_MOUNT=$(mount_id)
  printf '%s\n' "$PREVIOUS_MOUNT" | grep -Eq '^[0-9]+$' || exit 41
  # Refresh only this package; no reboot, no data clearing and no HOME reassignment.
@@ -155,7 +155,7 @@ main() {
  [ -n "$OWN_MOUNT" ] || exit 36
  printf '%s\n' "$OWN_MOUNT" > "$S/mount-id"
  [ "$(stat -c '%d:%i' "$TARGET")" = "$(stat -c '%d:%i' "$S/candidate.apk")" ] || exit 37
- [ "$(hash "$TARGET")" = "$CANDIDATE_HASH" ] || exit 38
+ [ "$(z9x_file_sha256 "$TARGET")" = "$CANDIDATE_HASH" ] || exit 38
  start_settings
  if ! wait_loaded "$S/candidate.apk"; then cat "$D/provider.log"; echo 'Settings did not load candidate inode; rolling back'; exit 39; fi
  phase APPLIED_5_MINUTES

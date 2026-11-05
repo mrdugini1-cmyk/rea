@@ -2,6 +2,7 @@
   "scope": "Bounded rollback tests with mocked platform operations, not Android/mount emulation.",
   "cases": [
     {
+      "shell": "sh",
       "case": "owned",
       "phase": "ROLLED_BACK",
       "unmount_called": true,
@@ -9,6 +10,15 @@
       "idempotent_cleanup": true
     },
     {
+      "shell": "/workspace/projector-analysis/tools/mksh/usr/bin/mksh",
+      "case": "owned",
+      "phase": "ROLLED_BACK",
+      "unmount_called": true,
+      "own_service_state_restored": true,
+      "idempotent_cleanup": true
+    },
+    {
+      "shell": "sh",
       "case": "foreign_mount",
       "phase": "ROLLBACK_REFUSED_FOREIGN_MOUNT",
       "unmount_called": false,
@@ -16,6 +26,15 @@
       "idempotent_cleanup": true
     },
     {
+      "shell": "/workspace/projector-analysis/tools/mksh/usr/bin/mksh",
+      "case": "foreign_mount",
+      "phase": "ROLLBACK_REFUSED_FOREIGN_MOUNT",
+      "unmount_called": false,
+      "own_service_state_restored": true,
+      "idempotent_cleanup": true
+    },
+    {
+      "shell": "sh",
       "case": "foreign_inode",
       "phase": "ROLLBACK_REFUSED_FOREIGN_MOUNT",
       "unmount_called": false,
@@ -23,6 +42,15 @@
       "idempotent_cleanup": true
     },
     {
+      "shell": "/workspace/projector-analysis/tools/mksh/usr/bin/mksh",
+      "case": "foreign_inode",
+      "phase": "ROLLBACK_REFUSED_FOREIGN_MOUNT",
+      "unmount_called": false,
+      "own_service_state_restored": true,
+      "idempotent_cleanup": true
+    },
+    {
+      "shell": "sh",
       "case": "baseline_changed",
       "phase": "ROLLBACK_BASELINE_CHANGED",
       "unmount_called": true,
@@ -30,6 +58,23 @@
       "idempotent_cleanup": true
     },
     {
+      "shell": "/workspace/projector-analysis/tools/mksh/usr/bin/mksh",
+      "case": "baseline_changed",
+      "phase": "ROLLBACK_BASELINE_CHANGED",
+      "unmount_called": true,
+      "own_service_state_restored": true,
+      "idempotent_cleanup": true
+    },
+    {
+      "shell": "sh",
+      "case": "record_interrupted",
+      "phase": "ROLLED_BACK",
+      "unmount_called": true,
+      "own_service_state_restored": true,
+      "idempotent_cleanup": true
+    },
+    {
+      "shell": "/workspace/projector-analysis/tools/mksh/usr/bin/mksh",
       "case": "record_interrupted",
       "phase": "ROLLED_BACK",
       "unmount_called": true,
