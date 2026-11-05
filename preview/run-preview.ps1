@@ -35,8 +35,9 @@ function Invoke-AdbText([string[]]$Arguments) {
 function Read-Phase([string]$RemotePath) {
     return Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/phase" ]; then cat "{0}/phase"; fi' -f $RemotePath))
 }
-function Read-Log([string]$RemotePath) {
-    Write-Host (Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/session.log" ]; then tail -n 60 "{0}/session.log"; fi' -f $RemotePath)))
+function Read-Log([string]$RemotePath, [int]$Lines = 60) {
+    if ($Lines -lt 1 -or $Lines -gt 200) { throw 'Invalid log line limit' }
+    Write-Host (Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/session.log" ]; then tail -n {1} "{0}/session.log"; fi' -f $RemotePath, $Lines)))
 }
 function Clear-CachedRequest {
     $command = @'
@@ -187,7 +188,7 @@ for ($i=0; $i -lt 180; $i++) {
         }
         if ($done -ne '0') { Read-Log $remote; throw 'Diagnostic exit is not confirmed; send this output before restarting SSH' }
         Clear-CachedRequest
-        Read-Log $remote
+        Read-Log $remote 200
         Write-Host 'DIAGNOSTIC_DONE: no APK replacement or mount performed.'
         exit 0
     }
