@@ -1,0 +1,295 @@
+{
+  "profile": "v4-allranges-experimental",
+  "hardware_tested": false,
+  "receiver_gain_implementation_verified": false,
+  "warning": "SW/SURR wire values FB..FF and 0B..0F are outside the previously observed range; signed interpretation and actual amplification are unknown. This is NOT a confirmed hardware gain extension.",
+  "source_sha256": "6194cc9a9cd03ca20c57fbe9b7adf3edec1f03b79d60aabd8fa4a84003b0fde0",
+  "base_v3_sha256": "a280cf2b6846407d396a0afff70c4b7a81dae7ec58f03f3c68783db268497348",
+  "candidate_sha256": "50ce9ed4b65524c6238dc41af9c77000d1e3644f1a0345bdea709cae1c5b94d8",
+  "display_ticks": [
+    50,
+    50
+  ],
+  "arc_guard_inherited": true,
+  "cec_dispatch_unchanged": true,
+  "channel_ui_ranges": {
+    "SW": [
+      -10,
+      10
+    ],
+    "CEN": [
+      -10,
+      10
+    ],
+    "SURR": [
+      -10,
+      10
+    ]
+  },
+  "neutral_stored_index": 11,
+  "sw_surr_neutral_wire_byte": 5,
+  "legacy_saved_indices_not_migrated": true,
+  "wire_values": [
+    {
+      "display": -10,
+      "stored": 1,
+      "wire_byte": 251,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": -9,
+      "stored": 2,
+      "wire_byte": 252,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": -8,
+      "stored": 3,
+      "wire_byte": 253,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": -7,
+      "stored": 4,
+      "wire_byte": 254,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": -6,
+      "stored": 5,
+      "wire_byte": 255,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": -5,
+      "stored": 6,
+      "wire_byte": 0,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": -4,
+      "stored": 7,
+      "wire_byte": 1,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": -3,
+      "stored": 8,
+      "wire_byte": 2,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": -2,
+      "stored": 9,
+      "wire_byte": 3,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": -1,
+      "stored": 10,
+      "wire_byte": 4,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 0,
+      "stored": 11,
+      "wire_byte": 5,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 1,
+      "stored": 12,
+      "wire_byte": 6,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 2,
+      "stored": 13,
+      "wire_byte": 7,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 3,
+      "stored": 14,
+      "wire_byte": 8,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 4,
+      "stored": 15,
+      "wire_byte": 9,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 5,
+      "stored": 16,
+      "wire_byte": 10,
+      "old_range_command_unchanged": true
+    },
+    {
+      "display": 6,
+      "stored": 17,
+      "wire_byte": 11,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": 7,
+      "stored": 18,
+      "wire_byte": 12,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": 8,
+      "stored": 19,
+      "wire_byte": 13,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": 9,
+      "stored": 20,
+      "wire_byte": 14,
+      "old_range_command_unchanged": false
+    },
+    {
+      "display": 10,
+      "stored": 21,
+      "wire_byte": 15,
+      "old_range_command_unchanged": false
+    }
+  ],
+  "edits": [
+    {
+      "offset": "0x4e02e",
+      "before": "0c5b",
+      "after": "165b",
+      "purpose": "SW increment bound 22"
+    },
+    {
+      "offset": "0x4e032",
+      "before": "0b68",
+      "after": "1568",
+      "purpose": "SW upper stored index 21"
+    },
+    {
+      "offset": "0x4e128",
+      "before": "0c5a",
+      "after": "165a",
+      "purpose": "SURR increment bound 22"
+    },
+    {
+      "offset": "0x4e12c",
+      "before": "0b68",
+      "after": "1568",
+      "purpose": "SURR upper stored index 21"
+    },
+    {
+      "offset": "0x4e042",
+      "before": "ff48",
+      "after": "fa48",
+      "purpose": "SW wire value: stored index minus 6; preserve neutral wire code 5"
+    },
+    {
+      "offset": "0x4e13c",
+      "before": "ff48",
+      "after": "fa48",
+      "purpose": "SURR wire value: stored index minus 6; preserve neutral wire code 5"
+    },
+    {
+      "offset": "0x4e2ae",
+      "before": "0c5a",
+      "after": "165a",
+      "purpose": "SW saved-value upper bound 22"
+    },
+    {
+      "offset": "0x4e2b2",
+      "before": "0b6d",
+      "after": "156d",
+      "purpose": "SW saved-value clamp 21"
+    },
+    {
+      "offset": "0x4e2c2",
+      "before": "016d",
+      "after": "fb6d",
+      "purpose": "SW saved-value minimum wire byte FB"
+    },
+    {
+      "offset": "0x4e2c6",
+      "before": "af40",
+      "after": "aa40",
+      "purpose": "SW restored wire value: stored index minus 6"
+    },
+    {
+      "offset": "0x177b0",
+      "before": "056d",
+      "after": "0b6d",
+      "purpose": "SW OTA neutral stored index 11"
+    },
+    {
+      "offset": "0x177c0",
+      "before": "056d",
+      "after": "0b6d",
+      "purpose": "SURR OTA neutral stored index 11"
+    },
+    {
+      "offset": "0x4e31e",
+      "before": "066d",
+      "after": "0b6d",
+      "purpose": "SW EQ reset neutral stored index 11"
+    },
+    {
+      "offset": "0x4e33a",
+      "before": "066d",
+      "after": "0b6d",
+      "purpose": "SURR EQ reset neutral stored index 11"
+    },
+    {
+      "offset": "0x48440",
+      "before": "055b",
+      "after": "0a5b",
+      "purpose": "SW display negative boundary 10"
+    },
+    {
+      "offset": "0x48444",
+      "before": "0569",
+      "after": "0a69",
+      "purpose": "SW negative magnitude base 10"
+    },
+    {
+      "offset": "0x48454",
+      "before": "0573",
+      "after": "0a73",
+      "purpose": "SW display neutral index 10"
+    },
+    {
+      "offset": "0x4845e",
+      "before": "2a42016e11e9",
+      "after": "2267f549016e",
+      "purpose": "SW positive magnitude stored index minus 11"
+    },
+    {
+      "offset": "0x484b4",
+      "before": "055b",
+      "after": "0a5b",
+      "purpose": "SURR display negative boundary 10"
+    },
+    {
+      "offset": "0x484b8",
+      "before": "0569",
+      "after": "0a69",
+      "purpose": "SURR negative magnitude base 10"
+    },
+    {
+      "offset": "0x484c8",
+      "before": "0573",
+      "after": "0a73",
+      "purpose": "SURR display neutral index 10"
+    },
+    {
+      "offset": "0x484d2",
+      "before": "2a42016e11e9",
+      "after": "2267f549016e",
+      "purpose": "SURR positive magnitude stored index minus 11"
+    }
+  ],
+  "crc_and_xml_checks_passed": true
+}
