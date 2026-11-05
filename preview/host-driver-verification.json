@@ -1,0 +1,10 @@
+{
+  "scope": "PowerShell driver checks with fake ADB. No device/root/mount execution.",
+  "powershell_runtime": "7.4.6 Linux",
+  "unicode_paths_preserved": true,
+  "latest_prepared_session_selection_passed": true,
+  "normal_apply_driver_path_passed": true,
+  "rollback_driver_path_passed": true,
+  "tampered_candidate_refused_before_upload": true,
+  "real_android_execution": false
+}

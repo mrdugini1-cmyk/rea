@@ -32,5 +32,10 @@
   },
   "payload_sha256": "8865275d03988a9a24ece2c99d3d386a33937c96c52f60f317904c859b73dee5",
   "root_probe_prepared": true,
-  "root_probe_hardware_tested": true
+  "root_probe_hardware_tested": true,
+  "full_apk_prepared_on_user_windows": true,
+  "reported_before_apk_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
+  "reported_candidate_apk_sha256": "a3371e5bbec22e0ac154f96060ebe11a296daeebc9b96f0c5f68f03193c142fb",
+  "preview_prepared": true,
+  "preview_hardware_tested": false
 }

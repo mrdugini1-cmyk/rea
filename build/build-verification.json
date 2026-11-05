@@ -621,5 +621,8 @@
   "stored_entries_checked": 601,
   "wrong_version_rejected": true,
   "existing_output_refused": true,
-  "prepare_powershell_parse_passed": true
+  "prepare_powershell_parse_passed": true,
+  "reported_windows_build_success": true,
+  "reported_real_source_sha256": "69e51d6087f1554153ae9d23008a77aec10747476a8adb206ab2c0cc816fa411",
+  "reported_real_candidate_sha256": "a3371e5bbec22e0ac154f96060ebe11a296daeebc9b96f0c5f68f03193c142fb"
 }

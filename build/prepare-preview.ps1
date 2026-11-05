@@ -17,7 +17,7 @@ if ($LASTEXITCODE -ne 0 -or -not [IO.File]::Exists($original)) { throw 'Could no
 & (Join-Path $PSScriptRoot 'build-candidate.ps1') -SourceApk $original -OutputApk $candidate
 $meta = Get-Content -Raw -LiteralPath ($candidate + '.json') | ConvertFrom-Json
 $info = [ordered]@{ fingerprint=$fingerprint; adb=$adbPath; serial=$Serial; before_apk=$original; before_sha256=$meta.source_apk_sha256; candidate_apk=$candidate; candidate_sha256=$meta.candidate_sha256; installed=$false }
-$info | ConvertTo-Json | Set-Content -Encoding ASCII -LiteralPath (Join-Path $session 'session.json')
+[IO.File]::WriteAllText((Join-Path $session 'session.json'), ($info | ConvertTo-Json), [Text.UTF8Encoding]::new($false))
 Write-Host ('SESSION: ' + $session)
 Write-Host ('BEFORE_SHA256: ' + $meta.source_apk_sha256)
 Write-Host ('CANDIDATE_SHA256: ' + $meta.candidate_sha256)
