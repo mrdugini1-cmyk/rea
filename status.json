@@ -25,9 +25,12 @@
     "ssh_port": 22,
     "password_authentication": false,
     "pubkey_authentication": true,
-    "service_restart_exit_status": 0
+    "service_restart_exit_status": 0,
+    "root_execution_verified": true,
+    "root_execution_context": "u:r:xgimi_ssh:s0",
+    "root_probe_params_restored": true
   },
   "payload_sha256": "8865275d03988a9a24ece2c99d3d386a33937c96c52f60f317904c859b73dee5",
   "root_probe_prepared": true,
-  "root_probe_hardware_tested": false
+  "root_probe_hardware_tested": true
 }
