@@ -18,10 +18,12 @@ elif args and args[0]=='push':
  print('1 file pushed',file=sys.stderr)
 elif args and args[0]=='shell':
  cmd=' '.join(args[1:])
- if 'TRANSFER_NEVER_ARMED' in cmd:print('TRANSFER_NEVER_ARMED' if s.get('resume_safe',True) else 'PRIOR_STAGE_MAY_HAVE_STARTED')
+ if 'stat -c %u:%a:%s /data/ssh/params' in cmd:print('0:600:0')
+ elif 'TRANSFER_NEVER_ARMED' in cmd:print('TRANSFER_NEVER_ARMED' if s.get('resume_safe',True) else 'PRIOR_STAGE_MAY_HAVE_STARTED')
  elif '/phase' in cmd:print(s['phase'])
  elif '/arm.sh' in cmd:
   if s.get('diagnose'):s['phase']='DIAGNOSTIC_DONE';s['exit_code']='0';(root/'state.json').write_text(json.dumps(s))
+  else:s['phase']='APPLIED_5_MINUTES';(root/'state.json').write_text(json.dumps(s))
   print('ROOT_STAGE_STARTED')
  elif '/rollback.request' in cmd:s['phase']='ROLLED_BACK';(root/'state.json').write_text(json.dumps(s))
  elif '/session.log' in cmd:print('fake diagnostic log')
@@ -40,6 +42,8 @@ elif args and args[0]=='shell':
  auto_cmd=[pwsh,'-NoProfile','-File',str(r/'run-preview.ps1')]
  auto_run=subprocess.run(auto_cmd,cwd=d,env=env,text=True,capture_output=True);assert auto_run.returncode==0,(auto_run.stdout,auto_run.stderr);assert str(auto) in auto_run.stdout
  auto_rollback=subprocess.run(auto_cmd+['-Rollback'],cwd=d,env=env,text=True,capture_output=True);assert auto_rollback.returncode==0,(auto_rollback.stdout,auto_rollback.stderr)
+ state.write_text(json.dumps({'phase':'ROLLED_BACK','exit_code':'255'}))
+ resumed=subprocess.run(cmd,env=env,text=True,capture_output=True);assert resumed.returncode==0,(resumed.stdout,resumed.stderr);assert 'Previous stage has finished' in resumed.stdout
  # Refuse resuming any stage whose remote evidence indicates it could have armed.
  state.write_text(json.dumps({'phase':'APPLIED_5_MINUTES','resume_safe':False}));log.write_text('')
  refused=subprocess.run(cmd,env=env,text=True,capture_output=True);assert refused.returncode!=0;assert 'cannot be resumed automatically' in refused.stderr

@@ -18,7 +18,11 @@ phase() { printf '%s\n' "$1" > "$D/phase.tmp"; chmod 644 "$D/phase.tmp"; mv "$D/
 z9x_file_sha256() { sha256sum "$1" | awk '{print $1}'; }
 mount_id() {
  exec 8< "$TARGET"
- awk '$1=="mnt_id:" {print $2}' /proc/self/fdinfo/8
+ Z9X_MOUNT_ID=
+ while read -r Z9X_KEY Z9X_VALUE Z9X_REST; do
+  if [ "$Z9X_KEY" = "mnt_id:" ]; then Z9X_MOUNT_ID=$Z9X_VALUE; fi
+ done < /proc/self/fdinfo/8
+ printf '%s\n' "$Z9X_MOUNT_ID"
  exec 8<&-
 }
 bounded() { timeout -k 2 20 "$@"; }
@@ -123,7 +127,10 @@ main() {
  phase BASELINE_SAVED
  if maintenance_running; then
   MAINT_STOPPED=1
-  bounded am stopservice --user 0 -n "$MAINT"
+  # Android 13 returns -1 (255) even after a successful stop. Verify actual state below.
+  STOP_RC=0
+  bounded am stopservice --user 0 -n "$MAINT" || STOP_RC=$?
+  echo "Maintenance stop command status: $STOP_RC; checking service state"
   N=0
   while :; do
    if maintenance_running; then
@@ -168,7 +175,7 @@ main() {
  done
  rollback
 }
-trap 'RC=$?; if [ "$CLEANED" = 0 ]; then rollback || true; fi; exit "$RC"' EXIT
+trap 'RC=$?; [ "$RC" = 0 ] || echo "Worker failed with exit code $RC"; if [ "$CLEANED" = 0 ]; then rollback || true; fi; exit "$RC"' EXIT
 trap 'exit 130' HUP INT TERM
 phase STARTING
 main

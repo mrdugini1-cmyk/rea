@@ -1,0 +1,10 @@
+{
+  "android13_stopservice_255_does_not_abort": true,
+  "unknown_service_state_refused": true,
+  "mount_id_direct_and_substitution_passed": true,
+  "shells": [
+    "sh",
+    "mksh"
+  ],
+  "device_preview_pending": true
+}

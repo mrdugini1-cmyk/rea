@@ -86,6 +86,11 @@ if ([IO.File]::Exists($receiptPath)) {
     $exitCode = Invoke-AdbText -Arguments @('shell', ('if [ -f "{0}/exit-code" ]; then cat "{0}/exit-code"; fi' -f $previousRemote))
     if ($Diagnose -and $previousPhase -match '^(ROLLED_BACK|ROLLBACK_[A-Z_]+|MAINTENANCE_RESTART_FAILED|PREFLIGHT_MOUNT_UNDO_FAILED)$' -and $exitCode -match '^\d+$') { $terminalStage = $true }
     if ($previousPhase -eq 'DIAGNOSTIC_DONE' -and $exitCode -eq '0') { $terminalStage = $true }
+    if ($previousPhase -eq 'ROLLED_BACK' -and $exitCode -match '^\d+$') {
+        $paramsState = Invoke-AdbText -Arguments @('shell', 'if [ ! -L /data/ssh/params ]; then stat -c %u:%a:%s /data/ssh/params; fi')
+        if ($paramsState -cne '0:600:0') { throw 'SSH params not restored; refusing another preview' }
+        $terminalStage = $true
+    }
     $probe = @'
 set -eu
 D='%REMOTE%'
