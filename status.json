@@ -1,10 +1,10 @@
 {
   "translation_complete_for_reviewed_scope": true,
-  "resources_editorial": 924,
+  "resources_editorial": 927,
   "resources_v1_chinese": 262,
   "layout_pool_values_v1": 18,
-  "dex_const_string_changes": 147,
-  "dex_classes_changed": 70,
+  "dex_const_string_changes": 148,
+  "dex_classes_changed": 71,
   "hardware_tested": false,
   "deployment_complete": false,
   "device": {
@@ -30,7 +30,7 @@
     "root_execution_context": "u:r:xgimi_ssh:s0",
     "root_probe_params_restored": true
   },
-  "payload_sha256": "8865275d03988a9a24ece2c99d3d386a33937c96c52f60f317904c859b73dee5",
+  "payload_sha256": "57995d2835948a1346d9fc096e192700e191bb3148938c610ef9718dd07d9e90",
   "root_probe_prepared": true,
   "root_probe_hardware_tested": true,
   "full_apk_prepared_on_user_windows": true,
@@ -49,5 +49,12 @@
   "reported_all_checked_namespaces_same_apk": true,
   "confirmed_failure_cause": "Android mksh built-in hash alias shadows script function; empty result caused false mismatch",
   "hash_alias_fix_prepared": true,
-  "mksh_regression_passed": true
+  "mksh_regression_passed": true,
+  "version": "v3",
+  "previous_v2_preview_user_reported_success": true,
+  "persistent_installer_prepared": true,
+  "persistence_device_verified": false,
+  "system_filesystem": "erofs",
+  "package_installer_path": "/system/priv-app/PackageInstaller/PackageInstaller.apk",
+  "package_installer_translation_pending": true
 }

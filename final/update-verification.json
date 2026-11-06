@@ -1,0 +1,57 @@
+{
+  "menu_labels": {
+    "head_picture_correction_text": "Проекция",
+    "head_screen_setting_text": "Проекция",
+    "head_image_setting_text": "Изображение",
+    "head_network_setting_text": "Сеть",
+    "head_signal_source_setting_text": "Источник",
+    "head_bluetooth_setting_text": "Bluetooth",
+    "head_sound_setting_text": "Звук",
+    "head_general_setting_text": "Общие"
+  },
+  "changed_from_v2": [
+    {
+      "name": "head_bluetooth_setting_text",
+      "before": "Bluetooth и аксессуары",
+      "after": "Bluetooth"
+    },
+    {
+      "name": "head_general_setting_text",
+      "before": "Общие настройки",
+      "after": "Общие"
+    },
+    {
+      "name": "head_image_setting_text",
+      "before": "Яркость и изображение",
+      "after": "Изображение"
+    },
+    {
+      "name": "head_picture_correction_text",
+      "before": "Коррекция изображения",
+      "after": "Проекция"
+    },
+    {
+      "name": "head_screen_setting_text",
+      "before": "Коррекция изображения",
+      "after": "Проекция"
+    },
+    {
+      "name": "head_signal_source_setting_text",
+      "before": "Источник сигнала",
+      "after": "Источник"
+    }
+  ],
+  "all_resource_ids_preserved": true,
+  "other_resources_unchanged": true,
+  "one_additional_dex_ui_string": {
+    "file": "classes4/com/xgimi/signal/SignalRepository.smali",
+    "method": ".method public final getSignalSourceList()Ljava/util/ArrayList;",
+    "line": 2569,
+    "before": " 设置",
+    "after": " — настройки"
+  },
+  "v3_hardware_tested": false,
+  "v2_preview_user_reported_success": true,
+  "package_installer_not_in_settings_apk": true,
+  "persistence_not_yet_verified": true
+}

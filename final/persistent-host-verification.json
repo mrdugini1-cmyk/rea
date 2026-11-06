@@ -1,0 +1,12 @@
+{
+  "host_simulation_passed": true,
+  "unicode_paths": true,
+  "stderr_success_handled": true,
+  "active_receipt_prevents_restart": true,
+  "foreign_baseline_rejected_before_upload": true,
+  "uninstall_checks_original_hash_and_params": true,
+  "same_boot_verification_refused": true,
+  "new_boot_hash_and_worker_verified": true,
+  "real_device_installation": false,
+  "real_device_reboot": false
+}

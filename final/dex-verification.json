@@ -1,0 +1,46 @@
+{
+  "classes.dex": {
+    "unchanged": true,
+    "checksum_valid": true
+  },
+  "classes2.dex": {
+    "classes": 3878,
+    "normalized_smali_roundtrip_identical": true,
+    "explicit_default_initializer_normalizations": [
+      "com/uc/crashsdk/export/CrashApi.smali",
+      "com/uc/crashsdk/b.smali",
+      "com/ta/a/c/f.smali",
+      "com/taobao/monitor/olympic/plugins/block/MessageQueueProxy.smali",
+      "com/uc/crashsdk/a/g.smali",
+      "com/taobao/monitor/olympic/logger/Logger.smali",
+      "com/ta/a/b/h.smali"
+    ],
+    "mismatches": [],
+    "checksum_valid": true
+  },
+  "classes3.dex": {
+    "classes": 3676,
+    "normalized_smali_roundtrip_identical": true,
+    "explicit_default_initializer_normalizations": [],
+    "mismatches": [],
+    "checksum_valid": true
+  },
+  "classes4.dex": {
+    "classes": 3244,
+    "normalized_smali_roundtrip_identical": true,
+    "explicit_default_initializer_normalizations": [
+      "com/xgimi/server/iot/GlobalConfig.smali"
+    ],
+    "mismatches": [],
+    "checksum_valid": true
+  },
+  "classes5.dex": {
+    "classes": 7693,
+    "normalized_smali_roundtrip_identical": true,
+    "explicit_default_initializer_normalizations": [
+      "com/xgimi/view/cell/GlobalConfig.smali"
+    ],
+    "mismatches": [],
+    "checksum_valid": true
+  }
+}
