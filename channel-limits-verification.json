@@ -1,0 +1,32 @@
+{
+  "scope": "Bounded actual MIPS16 getter, button/display and startup-restore checks; no peripherals emulated.",
+  "getter_input_cases": 3584,
+  "channels": {
+    "SW": {
+      "button_packet_cases": 22,
+      "display_values": 11,
+      "wire_bytes": [
+        0,
+        10
+      ],
+      "display_range": [
+        -5,
+        5
+      ]
+    },
+    "SURR": {
+      "button_packet_cases": 22,
+      "display_values": 11,
+      "wire_bytes": [
+        0,
+        10
+      ],
+      "display_range": [
+        -5,
+        5
+      ]
+    }
+  },
+  "hardware_tested": false,
+  "SW_restore_composed_cases": 256
+}

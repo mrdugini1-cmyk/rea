@@ -1,0 +1,17 @@
+{
+  "source_pdf_sha256": "26b26a998d51322958b49dd6b3db5812683affa910b5a8a61359560fc1ca54ed",
+  "output_pdf_sha256": "c412aeeec24d645ebed88cebd0ec4e491f6751829ef313582255de4b81d6f31b",
+  "pages": 55,
+  "replaced_original_pages": [
+    17,
+    24,
+    26
+  ],
+  "cover_and_contents_edition_notice": true,
+  "appended_pages": [
+    53,
+    54,
+    55
+  ],
+  "other_original_pages_render_identically": true
+}

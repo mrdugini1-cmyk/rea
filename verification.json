@@ -1,11 +1,29 @@
 {
-  "profile": "v5-eq-remote-experimental",
+  "profile": "v5.1-eq-channel-limits",
   "source_v4_sha256": "50ce9ed4b65524c6238dc41af9c77000d1e3644f1a0345bdea709cae1c5b94d8",
-  "candidate_sha256": "1a7930a2ef9a6d30c55b9a767b6787679bf7dae938be70c0dd12d5d20ab8db77",
+  "candidate_sha256": "6e5488cc9cc1ef68a2207d1e743c448564765c4479d434ae15ba27c8d1246360",
   "candidate_bytes": 889856,
   "hardware_tested": false,
-  "channel_levels_inherited_from_v4": true,
-  "sw_surr_outside_minus5_plus5_still_not_supported": true,
+  "channel_ui_ranges": {
+    "SW": [
+      -5,
+      5
+    ],
+    "CEN": [
+      -10,
+      10
+    ],
+    "SURR": [
+      -5,
+      5
+    ]
+  },
+  "channel_storage_indices": [
+    6,
+    16
+  ],
+  "channel_neutral_index": 11,
+  "saved_values_clamped_on_read": true,
   "cec_dispatch_unchanged": true,
   "arc_guard_unchanged": true,
   "center_unchanged": true,
@@ -56,13 +74,13 @@
       "name": "ota_mapping_log",
       "start": 786060,
       "end": 786169,
-      "next": 786076
+      "next": 786112
     },
     {
       "name": "sinfo_assert",
       "start": 779312,
       "end": 779420,
-      "next": 779420
+      "next": 779416
     },
     {
       "name": "sinfo_assert2",
@@ -88,8 +106,8 @@
       "object": "eq_core.o",
       "name": ".text.copy_gain",
       "size": 20,
-      "address": "0xbf0be478",
-      "pool": "sinfo_assert"
+      "address": "0xbf0bfe8c",
+      "pool": "ota_mapping_log"
     },
     {
       "object": "eq_core.o",
@@ -151,14 +169,14 @@
       "object": "eq_core.o",
       "name": ".rodata.masks.0",
       "size": 20,
-      "address": "0xbf0be430",
+      "address": "0xbf0be450",
       "pool": "sinfo_assert"
     },
     {
       "object": "eq_core.o",
       "name": ".rodata.labels.1",
       "size": 20,
-      "address": "0xbf0be448",
+      "address": "0xbf0be468",
       "pool": "sinfo_assert"
     },
     {
@@ -172,8 +190,8 @@
       "object": "eq_core.o",
       "name": ".rodata.eq_frequencies",
       "size": 12,
-      "address": "0xbf0be48c",
-      "pool": "sinfo_assert"
+      "address": "0xbf0bfea0",
+      "pool": "ota_mapping_log"
     },
     {
       "object": "eq_remote.o",
@@ -193,7 +211,7 @@
       "object": "eq_target.o",
       "name": ".text.error",
       "size": 24,
-      "address": "0xbf0be460",
+      "address": "0xbf0be480",
       "pool": "sinfo_assert"
     },
     {
@@ -270,8 +288,15 @@
       "object": "eq_target.o",
       "name": ".rodata.settings_key",
       "size": 12,
-      "address": "0xbf0bfe8c",
+      "address": "0xbf0bfeb0",
       "pool": "ota_mapping_log"
+    },
+    {
+      "object": "eq_target.o",
+      "name": ".text.eq_channel_get",
+      "size": 32,
+      "address": "0xbf0be430",
+      "pool": "sinfo_assert"
     }
   ],
   "symbols": {
@@ -281,7 +306,7 @@
       "other": 0
     },
     "copy_gain": {
-      "address": 3205227640,
+      "address": 3205234316,
       "size": 18,
       "other": 240
     },
@@ -316,12 +341,12 @@
       "other": 240
     },
     "labels.1": {
-      "address": 3205227592,
+      "address": 3205227624,
       "size": 20,
       "other": 0
     },
     "masks.0": {
-      "address": 3205227568,
+      "address": 3205227600,
       "size": 20,
       "other": 0
     },
@@ -366,17 +391,17 @@
       "other": 0
     },
     "error": {
-      "address": 3205227616,
+      "address": 3205227648,
       "size": 24,
       "other": 240
     },
     "__pool_error_14": {
-      "address": 3205227636,
+      "address": 3205227668,
       "size": 0,
       "other": 240
     },
     "__pend_error_14": {
-      "address": 3205227640,
+      "address": 3205227672,
       "size": 0,
       "other": 0
     },
@@ -391,7 +416,7 @@
       "other": 240
     },
     "settings_key": {
-      "address": 3205234316,
+      "address": 3205234352,
       "size": 10,
       "other": 0
     },
@@ -495,6 +520,21 @@
       "size": 0,
       "other": 0
     },
+    "eq_channel_root": {
+      "address": 3205227596,
+      "size": 0,
+      "other": 0
+    },
+    "eq_channel_low": {
+      "address": 3205227588,
+      "size": 0,
+      "other": 240
+    },
+    "eq_channel_return": {
+      "address": 3205227584,
+      "size": 0,
+      "other": 240
+    },
     "eq_settings_encode": {
       "address": 3205141112,
       "size": 112,
@@ -535,6 +575,11 @@
       "size": 132,
       "other": 240
     },
+    "eq_channel_get": {
+      "address": 3205227568,
+      "size": 32,
+      "other": 240
+    },
     "eq_timer_hook": {
       "address": 3205146328,
       "size": 312,
@@ -546,7 +591,7 @@
       "other": 240
     },
     "eq_frequencies": {
-      "address": 3205227660,
+      "address": 3205234336,
       "size": 10,
       "other": 0
     }
@@ -1832,7 +1877,7 @@
       "purpose": "reclaim priority_assert2"
     },
     {
-      "offset": "0xbe478",
+      "offset": "0xbfe8c",
       "length": 20,
       "before_sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
       "after_sha256": "0d387d96f93ca9ed4a0426af657ae10886b543b91e0cb1617df6a9e42a897789",
@@ -1842,7 +1887,7 @@
       "offset": "0xbe344",
       "length": 44,
       "before_sha256": "85759b3811ff7dc47b03792ac85317be51431a3f9e01dcafce317ed736a391b0",
-      "after_sha256": "21d15c812fd166cb4836717040e9050483d45f69899111b6ed798bbca635cdbc",
+      "after_sha256": "f5ad88289e6bb0137d587ff49581a7f5fad1b51841429db823974c8de0be8091",
       "purpose": "install .text.cancel"
     },
     {
@@ -1856,7 +1901,7 @@
       "offset": "0xab9ec",
       "length": 352,
       "before_sha256": "627f6149015f853f26db2f3dffba1b7c30b3b74b87c5cfb9f346c1616e3636d0",
-      "after_sha256": "bf5211857787c7f6b8927ad9fb8fad0ab97f2a8a49ac762ffa4b53acf10eb79f",
+      "after_sha256": "8940ee21adec241d1f10eaf4387ca6b048d9452ed841df0fc0825e5e5256a567",
       "purpose": "install .text.eq_make_block"
     },
     {
@@ -1870,7 +1915,7 @@
       "offset": "0xc5a20",
       "length": 284,
       "before_sha256": "d72511e843bf5a2e44e8bd1da20c2626311d1d6679424f717807a1db731d62f5",
-      "after_sha256": "9ecf7e91c0353b830f4d80d445e4d7a4da5b2d2dc92d7bfd41d108b367d36248",
+      "after_sha256": "7383b76958da8ff0aab5e7de7f68a181c465a373b49493d5cbb1f0e5dc7fa0ee",
       "purpose": "install .text.eq_editor_event"
     },
     {
@@ -1891,18 +1936,18 @@
       "offset": "0xa904c",
       "length": 188,
       "before_sha256": "e37ce3b00a1f15b3de62029972345420b76313a885c6ccc6e3b5547857b3ecc6",
-      "after_sha256": "62e194c230c8b5f4a623c0b137af3eccc33707333e03f7ef0fec5caac5936b53",
+      "after_sha256": "d6f27aab809894b9733f97932969b6daf43814f289c5e806e68565e9593b2456",
       "purpose": "install .text.eq_display_frame"
     },
     {
-      "offset": "0xbe430",
+      "offset": "0xbe450",
       "length": 20,
       "before_sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
       "after_sha256": "b8bc83dc55e926e23d2de5615986334c0d74b045a40f73cd4aaabe03e36ae74c",
       "purpose": "install .rodata.masks.0"
     },
     {
-      "offset": "0xbe448",
+      "offset": "0xbe468",
       "length": 20,
       "before_sha256": "de47c9b27eb8d300dbb5f2c353e632c393262cf06340c4fa7f1b40c4cbd36f90",
       "after_sha256": "49c6f9d79f223f21b7303f42234288ded342c2dfdf4e30b6c15a02819b89f06e",
@@ -1916,7 +1961,7 @@
       "purpose": "install .rodata.slots"
     },
     {
-      "offset": "0xbe48c",
+      "offset": "0xbfea0",
       "length": 12,
       "before_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
       "after_sha256": "32ebe58b752dc1dc80c7ac0e09ff8f512ef690d7145919f68bd7ea72add3e507",
@@ -1937,7 +1982,7 @@
       "purpose": "install .text.runtime"
     },
     {
-      "offset": "0xbe460",
+      "offset": "0xbe480",
       "length": 24,
       "before_sha256": "9d908ecfb6b256def8b49a7c504e6c889c4b0e41fe6ce3e01863dd7b61a20aa0",
       "after_sha256": "a6a3dbe491b5ca667b9432efff9f8fabadf6af9315b887ee580cf4b9cb2589f4",
@@ -1947,7 +1992,7 @@
       "offset": "0xa918c",
       "length": 120,
       "before_sha256": "6edd9f6f9cc92cded36e6c4a580933f9c9f1b90562b46903b806f21902a1a54f",
-      "after_sha256": "9c0f49b4d8bc246ae88ee48b8be3bc98182f75973b4aed33f96343e79240c73f",
+      "after_sha256": "f16dfd5d223cf28e2fabf8e0796bad35d747fecf1ac1326787e157b0951fcf6c",
       "purpose": "install .text.save"
     },
     {
@@ -1982,14 +2027,14 @@
       "offset": "0xbf9e0",
       "length": 148,
       "before_sha256": "3b18c58c739716e76429634a61375c45b3b5cd470c22ab6d3e14cee23dd992e1",
-      "after_sha256": "c867d920828f121f55fc46db6f159be93fac58850c406ead84c1192558819fc4",
+      "after_sha256": "1f206d28131c697e8dc577b57e50fa7e2d6c986bbce979282ea9ddddc6071251",
       "purpose": "install .text.apply"
     },
     {
       "offset": "0xbe310",
       "length": 48,
       "before_sha256": "17b0761f87b081d5cf10757ccc89f12be355c70e2e29df288b65b30710dcbcd1",
-      "after_sha256": "bc7c7273697f30c37366cc85c5b019f732322c6879d66a7e958dbe703d704a12",
+      "after_sha256": "2ab2d2b852d6c8cd27c2ba44bfeb59f544eeb91508d1f90fb840c4b081bb3d19",
       "purpose": "install .text.load.part.0"
     },
     {
@@ -2003,22 +2048,29 @@
       "offset": "0xa9108",
       "length": 132,
       "before_sha256": "115bad14f1c9f2c027a84de21b107015722cb76be8d0abf3760ad8e00d6c24a5",
-      "after_sha256": "67f6ad34120c90f79506ad1c2bc1c2ea0cea45cf279cdf470e6454dd7eebe51d",
+      "after_sha256": "98220ea351988820ee455321c8aa5f87681eb73218806202c79d6d19a5e392dd",
       "purpose": "install .text.eq_key_hook"
     },
     {
       "offset": "0xaa6d8",
       "length": 312,
       "before_sha256": "6287e17fe5efcb191aec8a2578e685d0a1040a0ab53bd1f02c7f49cc6c8fced7",
-      "after_sha256": "1b9a86fa306f4cdfda54b76a795e0443d3e54d6e4cbd61f55f772ce645c742f2",
+      "after_sha256": "2a3dbc9da2eb04334e93839cecbd8f554034a4da1b6b5b0a5b8b7a574d315729",
       "purpose": "install .text.eq_timer_hook"
     },
     {
-      "offset": "0xbfe8c",
+      "offset": "0xbfeb0",
       "length": 12,
       "before_sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
       "after_sha256": "fbe25b4d7d6b28b55cb29fa6abd969e34166434307248ed2bbdc92e479766714",
       "purpose": "install .rodata.settings_key"
+    },
+    {
+      "offset": "0xbe430",
+      "length": 32,
+      "before_sha256": "66687aadf862bd776c8fc18b8e9f8e20089714856ee233b3902a591d0d5f2925",
+      "after_sha256": "331123dfc140132566e6e7f9b0b8c0a9388419dc725ae2dcc8d957d601dbbb83",
+      "purpose": "install .text.eq_channel_get"
     },
     {
       "offset": "0xaa810",
@@ -2068,6 +2120,76 @@
       "before_sha256": "f753b9f2de9e6947ad759996077ff26ca17396be870285b1a10dacb0f75a667a",
       "after_sha256": "9e9152288a8c450a3d8da3acf8ffefb99ee71ae54dfa435e7eaf43f160a81efd",
       "purpose": "display off after additional 70 ticks"
+    },
+    {
+      "offset": "0x3d0c2",
+      "length": 10,
+      "before_sha256": "d1f137c21c9d7a3365cf6b6177ba07f23eb12964187c9dac74b6bbea0d515fd2",
+      "after_sha256": "962b6111c7e8b05a7141536acaa05ff929022241b7663eb391d760ee6e3d32cc",
+      "purpose": "clamp SW/SURR saved index to 6..16 on every read"
+    },
+    {
+      "offset": "0x3d0d6",
+      "length": 10,
+      "before_sha256": "50c7df483d5e6fa052c15e6b2647ce228a9a1390b9e924847e6f4f7e9ff88af5",
+      "after_sha256": "962b6111c7e8b05a7141536acaa05ff929022241b7663eb391d760ee6e3d32cc",
+      "purpose": "clamp SW/SURR saved index to 6..16 on every read"
+    },
+    {
+      "offset": "0x4e02e",
+      "length": 2,
+      "before_sha256": "e27e2a27d1361afbd3aa9d6d84a29991ec1e4f1879d940e190b2ff52717372fd",
+      "after_sha256": "b59048f9a1c52dafcb096199ba74a57f6326cf89509feb213a50052413eeb704",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e032",
+      "length": 2,
+      "before_sha256": "6a52e0c71cd3a0d4ef748dfa917b79f810b4390aa342a4f92734681b2ceb0f3d",
+      "after_sha256": "51067252bc4afc8b7d5aa5f8bc5bee8ccf5bb4716abd36e893d06df6940ef20e",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e090",
+      "length": 2,
+      "before_sha256": "662fb906c0fb671022f9914d6bba12250ea6adfb12dbae81cebb353b3685083e",
+      "after_sha256": "e626b96f6e78aec61c15e17531d90aa0ab177d6bdbde8ebc1e338465594f23af",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e094",
+      "length": 2,
+      "before_sha256": "dc21e6421ad23388fb5c3f3e1f7a3c721dc73973f3173389d92dbb455b779274",
+      "after_sha256": "eb03bd9c23b61cd0566d14c43818d5b07eeff2ecb16ef5a3273210a7934ce602",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e128",
+      "length": 2,
+      "before_sha256": "0cd22b8ee7f35f30094d8136614e75fca1fc3c86b8088ba81e9c6ea4f32766c4",
+      "after_sha256": "64d4cb14307f8cf59558dbd24a8c021105cf64817d149dbef6dcd8f1a06d38c0",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e12c",
+      "length": 2,
+      "before_sha256": "6a52e0c71cd3a0d4ef748dfa917b79f810b4390aa342a4f92734681b2ceb0f3d",
+      "after_sha256": "51067252bc4afc8b7d5aa5f8bc5bee8ccf5bb4716abd36e893d06df6940ef20e",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e1a2",
+      "length": 2,
+      "before_sha256": "662fb906c0fb671022f9914d6bba12250ea6adfb12dbae81cebb353b3685083e",
+      "after_sha256": "e626b96f6e78aec61c15e17531d90aa0ab177d6bdbde8ebc1e338465594f23af",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
+    },
+    {
+      "offset": "0x4e1a6",
+      "length": 2,
+      "before_sha256": "dc21e6421ad23388fb5c3f3e1f7a3c721dc73973f3173389d92dbb455b779274",
+      "after_sha256": "eb03bd9c23b61cd0566d14c43818d5b07eeff2ecb16ef5a3273210a7934ce602",
+      "purpose": "bound SW/SURR buttons to stored 6..16, displayed -5..+5"
     }
   ],
   "crc_and_xml_verified": true,
