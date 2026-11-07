@@ -1,0 +1,32 @@
+{
+  "scope": "Checks final bytes and executes bounded original instruction slices, not hardware.",
+  "display_events_tick_command": [
+    [
+      30,
+      6
+    ],
+    [
+      100,
+      7
+    ]
+  ],
+  "arc_abi_cases": 32,
+  "center": {
+    "driver_inputs": 256,
+    "registers": [
+      23,
+      24
+    ],
+    "table_address": "0xbf0c6a00",
+    "table_length": 21,
+    "neutral_register_value": 211,
+    "button_cases": 42,
+    "display_values": 21
+  },
+  "hooks_and_delay_slot_verified": true,
+  "key_mapping_unchanged": true,
+  "cec_unchanged": true,
+  "all_changes_accounted_for": true,
+  "aota_crc_verified": true,
+  "hardware_tested": false
+}
